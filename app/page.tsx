@@ -1,5 +1,6 @@
 import Cards from "./components/Cards";
 import Contribution from "./components/Contribution";
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 
@@ -10,6 +11,7 @@ export default function Home() {
   <Hero />
   <Cards />
   <Contribution />
+  <Footer />
     </>
  )
 }

@@ -58,19 +58,19 @@ const ContactUs = () => {
           <input
             type="text"
             placeholder="Your Name"
-            className="w-full border-b border-white bg-transparent py-3 placeholder-white focus:outline-none"
+            className="w-full border-b border-white bg-transparent py-3 placeholder-white/40 tracking-widest focus:outline-none"
           />
 
           <input
             type="email"
             placeholder="Your Email"
-            className="w-full border-b border-white bg-transparent py-3 placeholder-white focus:outline-none"
+            className="w-full border-b border-white bg-transparent py-3 placeholder-white/40 tracking-widest focus:outline-none"
           />
 
           <input
             type="text"
             placeholder="What inspires you about The Verse"
-            className="w-full border-b border-white bg-transparent py-3 placeholder-white focus:outline-none"
+            className="w-full border-b border-white bg-transparent py-3 placeholder-white/40 tracking-widest focus:outline-none"
           />
 
           <DropdownMenu>

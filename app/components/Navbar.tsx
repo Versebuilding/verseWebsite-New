@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FiMenu, FiX } from 'react-icons/fi';
 
-type NavbarProps = {
+export type NavbarProps = {
   navOpen : boolean;
   setNavOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
@@ -31,7 +31,7 @@ const Navbar = ({navOpen, setNavOpen}: NavbarProps) => {
     <Link href="/Games">Games & Digital Experiences</Link>
     <Link href="/team">Our Team</Link>
     <Link href="/aboutUs">About Us</Link>
-    <Link href="/contactUs">Contact Us</Link>
+    <Link href="/contact-us">Contact Us</Link>
   </div>
 
   {/* Button */}
@@ -48,7 +48,7 @@ const Navbar = ({navOpen, setNavOpen}: NavbarProps) => {
       <div className="absolute top-16 left-0 w-full text-white flex flex-col items-center gap-6 py-8 bg-black/70">
           <Link href="/Games" onClick={toggleNav}>Games & Digital Experiences</Link>
           <Link href="/team" onClick={toggleNav}>Our Team</Link>
-          <Link href="/aboutUs" onClick={toggleNav}>About Us</Link>
+          <Link href="/about-us" onClick={toggleNav}>About Us</Link>
           <Link href="/contactUs" onClick={toggleNav}>Contact Us</Link>
           <button className=" bg-gradient-to-r from-[#7F5AF0] to-[#9F7AEA] rounded-xl w-24 h-8 mt-4" onClick={toggleNav}>Explore</button>
       </div>

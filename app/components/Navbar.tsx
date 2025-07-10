@@ -23,7 +23,7 @@ const Navbar = ({navOpen, setNavOpen}: NavbarProps) => {
       width={40}
       height={40}
     />
-    <h1>The Verse</h1>
+    <Link href='/'>The Verse</Link>
   </div>
 
   {/* Links */}

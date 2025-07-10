@@ -77,9 +77,9 @@ const Footer = () => {
             </div>
 
             <div className="flex flex-col gap-6 ml-32">
-              <FaInstagram className="text-[#f5d8e4] text-2xl cursor-pointer hover:opacity-80" />
-              <X className="text-white text-2xl cursor-pointer hover:opacity-80" />
-              <FaLinkedin className="text-white text-2xl cursor-pointer hover:opacity-80" />
+            <Link href={'https://www.instagram.com/buildingverses/'}><FaInstagram className="text-[#f5d8e4] text-2xl cursor-pointer hover:opacity-80" /></Link>
+            <Link href={'https://x.com/buildingverses'}> <X className="text-white text-2xl cursor-pointer hover:opacity-80" /> </Link>
+            <Link href={'https://www.linkedin.com/company/building-the-verse/'}><FaLinkedin className="text-white text-2xl cursor-pointer hover:opacity-80" /> </Link>
             </div>
           </div>
         </div>

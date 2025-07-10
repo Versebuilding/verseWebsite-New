@@ -1,14 +1,31 @@
 'use client';
 
 import Link from 'next/link';
-import { FaInstagram, FaTimes, FaLinkedin } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { X } from 'lucide-react';
+import { Button } from './ui/button';
 
 const Footer = () => {
   return (
     <footer className="bg-[#1D1925] text-gray-300 py-16 px-8">
       <div className="max-w-7xl mx-auto flex flex-col gap-12">
 
+        <div className='flex justify-between mb-10 '>
+
         <h3 className="text-white text-2xl font-semibold">Contact Us</h3>
+   <div className="flex items-end gap-2 w-full md:w-auto">
+  <input
+    type="email"
+    placeholder="Stay Connected"
+    className="border-b border-gray-400 text-white text-sm bg-transparent placeholder-gray-400 focus:outline-none focus:ring-0 pb-1"
+  />
+  <Button type="submit" className="p-0 pb-1">
+    <span className="text-white mt-9 text-lg cursor-pointer">&rarr;</span>
+  </Button>
+</div>
+
+      </div>
+
 
         {/* Links Section */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 text-sm">
@@ -27,7 +44,7 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-medium mb-4">Games</h4>
             <ul className="space-y-2">
-              <li><Link href="/">walkXR</Link></li>
+              <li><Link href="/">WalkXR</Link></li>
               <li><Link href="/">Karma The Six Realms</Link></li>
               <li><Link href="/">Adventures In Breath</Link></li>
             </ul>
@@ -50,34 +67,30 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Support */}
-          <div>
-            <h4 className="text-white font-medium mb-4">Support</h4>
-            <ul className="space-y-2">
-              <li className="font-semibold text-[#b8a6a6]">Donate</li>
-            </ul>
+          {/* Support + Socials */}
+          <div className="flex items-start gap-6">
+            <div>
+              <h4 className="text-white font-medium mb-2">Support</h4>
+              <ul>
+                <li className="font-semibold text-[#b8a6a6] cursor-pointer">Donate</li>
+              </ul>
+            </div>
+
+            <div className="flex flex-col gap-6 ml-32">
+              <FaInstagram className="text-[#f5d8e4] text-2xl cursor-pointer hover:opacity-80" />
+              <X className="text-white text-2xl cursor-pointer hover:opacity-80" />
+              <FaLinkedin className="text-white text-2xl cursor-pointer hover:opacity-80" />
+            </div>
           </div>
         </div>
 
-        {/* Socials */}
-        <div className="flex items-center gap-6 mt-8">
-          <FaInstagram className="text-[#f5d8e4] text-2xl cursor-pointer" />
-          <FaTimes className="text-white text-2xl cursor-pointer" />
-          <FaLinkedin className="text-white text-2xl cursor-pointer" />
-        </div>
+{/* Stay Connected Section */}
+<div className=" flex flex-col md:flex-row items-center justify-between border-t border-gray-400 ">
 
-        {/* Stay Connected */}
-        <div className="mt-8 flex items-center justify-between border-t border-gray-400 pt-6">
-          <span className="text-gray-400 text-sm">Stay Connected</span>
-          <div className="flex items-center gap-2">
-            <div className="border-b border-gray-400 w-64"></div>
-            <span className="text-white text-xl">&rarr;</span>
-          </div>
         </div>
-
         {/* Copyright */}
-        <p className="text-center text-gray-400 text-sm mt-4">
-          Copyright © The Verse 2024
+        <p className="text-center text-gray-400 text-sm">
+          © The Verse 2024. All rights reserved.
         </p>
 
       </div>

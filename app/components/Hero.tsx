@@ -32,7 +32,7 @@ const Hero = () => {
         </div>
       </main>
 
-      <article className="flex justify-center items-center bg-gradient-to-b from-[#1C1428] to-[#202020] py-16">
+      <article className="flex justify-center items-center bg-gradient-to-b from-[#170237] to-[#030004] py-16">
         <Image
           src="/images/vid.png"
           alt="vid"

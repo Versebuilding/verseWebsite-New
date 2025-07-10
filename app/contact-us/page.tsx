@@ -31,7 +31,7 @@ const ContactUs = () => {
   return (
     <>
       <Navbar navOpen={navOpen} setNavOpen={setNavOpen}/>
-      <div className="relative min-h-screen bg-gradient-to-b from-[#10082e] to-[#0B0816] text-white flex flex-col items-center px-4 py-24 overflow-hidden">
+      <div className="relative min-h-screen bg-gradient-to-b from-[#10082e] to-[#0B0816] text-white flex flex-col items-center px-4 py-20 overflow-hidden">
 
         {/* Background Logo */}
         <div className="absolute top-20 left-1/2 transform -translate-x-1/2 opacity-20 pointer-events-none">

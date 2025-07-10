@@ -14,7 +14,7 @@ const Navbar = ({navOpen, setNavOpen}: NavbarProps) => {
     setNavOpen(!navOpen)
   }
   return (
-   <nav className="absolute top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-4 bg-black">
+   <nav className="absolute top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-3 bg-black/30">
   {/* Logo */}
   <div className="flex items-center gap-2">
     <Image 

@@ -30,7 +30,7 @@ const Navbar = ({navOpen, setNavOpen}: NavbarProps) => {
   <div className="hidden md:flex gap-20 items-center">
     <Link href="/games">Games & Digital Experiences</Link>
     <Link href="/team">Our Team</Link>
-    <Link href="/aboutUs">About Us</Link>
+    <Link href="/about-us">About Us</Link>
     <Link href="/contact-us">Contact Us</Link>
   </div>
 

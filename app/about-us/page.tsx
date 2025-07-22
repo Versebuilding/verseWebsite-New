@@ -160,7 +160,7 @@ const AboutUs = () => {
             alt={item.label}
             width={200}
             height={200}
-            className="rounded-xl object-cover w-full h-auto"
+            className="rounded-xl object-cover w-full h-[200px]"
           />
           <p className="mt-10 text-base">{item.label}</p>
         </motion.div>
@@ -176,7 +176,7 @@ const AboutUs = () => {
       whileInView="visible"
       viewport={{ once: true }}
       custom={10}
-      className="text-3xl font-bold"
+      className="text-3xl font-bold text-center"
     >
       Our Path
     </motion.h1>

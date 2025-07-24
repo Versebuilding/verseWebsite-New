@@ -1,11 +1,18 @@
 import React from 'react'
 import Image from 'next/image'
+import {motion} from 'framer-motion'
 
 const Contribution = () => {
   return (
-    <section className="bg-[#202020c9] text-white py-16 px-6">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
-
+    <motion.section
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+      className="bg-[#202020c9] text-white py-16 px-6"
+    >     
+     <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      
         {/* Left Text Section */}
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-4xl text-center font-bold mb-6">Make an Impact</h1>
@@ -32,7 +39,7 @@ const Contribution = () => {
         </div>
 
       </div>
-    </section>
+    </motion.section>
   )
 }
 

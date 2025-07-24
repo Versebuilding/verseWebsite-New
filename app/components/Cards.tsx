@@ -1,4 +1,5 @@
 'use client';
+import {motion} from 'framer-motion'
 
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -16,6 +17,13 @@ const slides = [
 
 export default function Cards() {
   return (
+        <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+      
+    >
     <section className="py-12 bg-gradient-to-b from-[#1C1428] to-[#202020]">
       <h2 className="text-3xl font-bold text-center mb-4 text-white">
         What We’re Building
@@ -29,16 +37,16 @@ export default function Cards() {
         {/* ← custom prev */}
         <button
           className="swiper-nav-prev absolute left-0 top-1/2 -translate-y-1/2
-                     text-white text-3xl select-none z-50"
-        >
+          text-white text-3xl select-none z-50"
+          >
           &#10094;
         </button>
 
         {/* → custom next */}
         <button
           className="swiper-nav-next absolute right-0 top-1/2 -translate-y-1/2
-                     text-white text-3xl select-none z-50"
-        >
+          text-white text-3xl select-none z-50"
+          >
           &#10095;
         </button>
 
@@ -59,20 +67,21 @@ export default function Cards() {
             next: { translate: ['40%', 0, -100], scale: 0.9 },
           }}
           className="w-[800px] h-full mx-auto"
-        >
+          >
           {slides.map((src, i) => (
             <SwiperSlide
-              key={i}
-              className="flex items-center justify-center h-full rounded-3xl overflow-hidden"
+            key={i}
+            className="flex items-center justify-center h-full rounded-3xl overflow-hidden"
             >
                   <div className="w-full h-full rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.3)]">
 
               <Image
-                src={src}
-                alt={`slide-${i}`}
-                width={700}
-                height={400}
-                className="w-full h-full object-cover rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
+              
+              src={src}
+              alt={`slide-${i}`}
+              width={700}
+              height={400}
+              className="w-full h-full object-cover rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
               />
               </div>
             </SwiperSlide>
@@ -80,5 +89,6 @@ export default function Cards() {
         </Swiper>
       </div>
     </section>
+          </motion.section>
   );
 }

@@ -43,13 +43,13 @@ const AboutUs = () => {
       <Navbar navOpen={navOpen} setNavOpen={setNavOpen} />
 
       {/* Hero Section */}
-      <div className="bg-[#e8def7] min-h-screen flex flex-col md:flex-row items-center px-10 py-40 gap-20">
+      <div className="bg-[#e8def7] min-h-screen flex flex-col md:flex-row items-center px-10 py-40 gap-44">
         <div className="relative">
           <Image src="/images/aboutUs/aboutUs.png" alt="about us page image" width={500} height={500} className="rounded-3xl ml-40" />
-          <h1 className="absolute top-1/2 left-1/2 translate-x-16 -translate-y-44 w-full text-7xl font-bold text-black">THE VERSE</h1>
+          <h1 className="absolute top-1/2 left-1/2 translate-x-44 -translate-y-44 w-full text-7xl font-bold text-purple-900">THE VERSE</h1>
         </div>
         <div className="max-w-xl">
-          <p className="text-lg text-gray-800 leading-relaxed mt-44">
+          <p className="text-lg text-gray-800 leading-relaxed mt-44 ">
             At The Verse, we create games, experiences, and rituals that uplift humanity.
             We are a global community of gamers, developers, designers, scientists, artists,
             visionaries, teachers, and students each of us contributing our expertise to invent
@@ -102,7 +102,7 @@ const AboutUs = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[700px] w-[700px] rounded-full bg-gradient-to-tr from-fuchsia-500 to-purple-700 blur-3xl opacity-20 animate-pulse z-0" />
 
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <motion.h2 variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0} className="text-6xl font-bold mb-12 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
+          <motion.h2 variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0} className="text-6xl font-bold mb-12 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-white">
             The Way of The Verse
           </motion.h2>
 

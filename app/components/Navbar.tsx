@@ -29,7 +29,7 @@ const Navbar = ({navOpen, setNavOpen}: NavbarProps) => {
   {/* Links */}
   <div className="hidden md:flex gap-20 items-center">
     <Link href="/games">Games & Digital Experiences</Link>
-    <Link href="/team">Our Team</Link>
+    <Link href="/our-team">Our Team</Link>
     <Link href="/about-us">About Us</Link>
     <Link href="/contact-us">Contact Us</Link>
   </div>
@@ -47,7 +47,7 @@ const Navbar = ({navOpen, setNavOpen}: NavbarProps) => {
     {navOpen && (
       <div className="absolute top-16 left-0 w-full text-white flex flex-col items-center gap-6 py-8 bg-black/70">
           <Link href="/games" onClick={toggleNav}>Games & Digital Experiences</Link>
-          <Link href="/team" onClick={toggleNav}>Our Team</Link>
+          <Link href="/our-team" onClick={toggleNav}>Our Team</Link>
           <Link href="/about-us" onClick={toggleNav}>About Us</Link>
           <Link href="/contact-us" onClick={toggleNav}>Contact Us</Link>
           <button className=" bg-gradient-to-r from-[#7F5AF0] to-[#9F7AEA] rounded-xl w-24 h-8 mt-4" onClick={toggleNav}>Explore</button>

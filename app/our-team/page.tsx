@@ -1,19 +1,15 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { People } from './teamPeople'
-import Navbar from '../components/Navbar'
 
 const OurTeam = () => {
-  const [navOpen, setNavOpen] = useState(false)
 
   const coFounders = People.slice(0, 2)
   const others = People.slice(2)
 
   return (
-    <>
-      <Navbar navOpen={navOpen} setNavOpen={setNavOpen} />
       <section className="relative bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] text-white py-32 px-4 md:px-20 overflow-hidden">
         {/* Glowing Background */}
         <div className="absolute top-1/2 left-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-700/30 blur-3xl z-0 animate-pulse" />
@@ -76,7 +72,6 @@ const OurTeam = () => {
           ))}
         </div>
       </section>
-    </>
   )
 }
 

@@ -1,7 +1,4 @@
-'use client'
-import React, { useState } from 'react';
 import Image from 'next/image';
-import Navbar from '../components/Navbar';
 import { ChevronDown } from 'lucide-react';
 import { DropdownMenu, 
   DropdownMenuTrigger,
@@ -27,10 +24,8 @@ import { DropdownMenu,
 
 
 const ContactUs = () => {
-  const [navOpen, setNavOpen] = useState(false)
   return (
     <>
-      <Navbar navOpen={navOpen} setNavOpen={setNavOpen}/>
       <div className="relative min-h-screen bg-gradient-to-b from-[#10082e] to-[#0B0816] text-white flex flex-col items-center px-4 py-20 overflow-hidden">
 
         {/* Background Logo */}

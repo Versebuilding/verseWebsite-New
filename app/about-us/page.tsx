@@ -1,14 +1,10 @@
-// page.tsx
-
 'use client'
-import React, { useState } from 'react'
-import Navbar from '../components/Navbar'
+import React from 'react'
 import Image from 'next/image'
 import { motion, Variants } from 'framer-motion'
 
 const AboutUs = () => {
-  const [navOpen, setNavOpen] = useState(false)
-
+ 
   const missions = [
     { label: 'Human First Approach', src: '/images/aboutUs/human.png' },
     { label: 'Collaboration', src: '/images/aboutUs/collab.png' },
@@ -40,8 +36,6 @@ const AboutUs = () => {
 
   return (
     <>
-      <Navbar navOpen={navOpen} setNavOpen={setNavOpen} />
-
       {/* Hero Section */}
       <div className="bg-[#e8def7] min-h-screen flex flex-col md:flex-row items-center px-10 py-40 gap-44">
         <div className="relative">

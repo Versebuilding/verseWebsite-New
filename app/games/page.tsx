@@ -1,7 +1,5 @@
-'use client'
-import React, { useState } from 'react';
+
 import Image from 'next/image';
-import Navbar from '../components/Navbar';
 import Link from 'next/link';
 import { Button } from '../components/ui/button';
 
@@ -27,10 +25,7 @@ const experiences = [
 ];
 
 export default function Games() {
-    const [navOpen, setNavOpen] = useState(false)
   return (
-    <>
-    <Navbar navOpen={navOpen} setNavOpen={setNavOpen}/>
     <main className="min-h-screen bg-gradient-to-b from-[#070316] to-[#332859]  text-white py-16 px-8 flex flex-col items-center">
       <h1 className="text-4xl md:text-5xl font-extrabold mb-8 mt-10 text-center">Interactive Experiences</h1>
       <p className="max-w-2xl text-lg md:text-xl text-center mb-8">
@@ -56,6 +51,5 @@ export default function Games() {
         ))}
       </div>
     </main>
-        </>
   );
 }

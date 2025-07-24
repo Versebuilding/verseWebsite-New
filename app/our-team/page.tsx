@@ -40,7 +40,8 @@ const OurTeam = () => {
                 <div className="text-center mt-4 text-white">
                   <h3 className="text-lg font-semibold">{person.name}</h3>
                   <p className="text-sm text-purple-300">{person.role}</p>
-                  <p className="text-xs italic mt-2 text-gray-400">“{person.quote}”</p>
+                  <p className="text-xs italic mt-2 mb-3 text-gray-400">{person.loc}</p>
+                  <p className="text-md text-gray-300 mb-2">{person.about}</p>
                 </div>
               </motion.div>
             ))}
@@ -64,12 +65,12 @@ const OurTeam = () => {
                 fill
                 className="object-cover rounded-xl"
                 />
-                <div className="absolute inset-0 z-10 rounded-xl bg-black/40" />
+                <div className="absolute inset-0 z-10 rounded-xl bg-black/30" />
               </div>
               <div className="text-center mt-4 text-white">
                 <h3 className="text-lg font-semibold">{person.name}</h3>
                 <p className="text-sm text-purple-300">{person.role}</p>
-                <p className="text-xs italic mt-2 text-gray-400">“{person.quote}”</p>
+                <p className="text-xs italic mt-2 text-gray-400">{person.loc}</p>
               </div>
             </motion.div>
           ))}

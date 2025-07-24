@@ -10,3 +10,35 @@ export const getAibHeroVideo = async () => {
     },
   })
 }
+
+export const getAibFirstImage = async () => {
+  return await prisma.mediaAsset.findFirst({
+    where: {
+      page: 'aib',
+      section: 'hero',
+      type: 'image',
+    },
+  });
+}
+
+
+export const getAibFirstCatImage = async () => {
+  return await prisma.mediaAsset.findFirst({
+    where: {
+      page: 'aib',
+      section: 'cat',
+      type: 'image',
+    },
+  });
+};
+
+
+export const getAibSecondCatVideo = async () => {
+  return await prisma.mediaAsset.findFirst({
+    where: {
+      page: 'aib',
+      section: 'section3', 
+      type: 'video',
+    },
+  });
+};

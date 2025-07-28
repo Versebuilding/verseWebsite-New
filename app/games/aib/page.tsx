@@ -1,10 +1,20 @@
-import { getAibFirstCatImage, getAibFirstImage, getAibHeroVideo, getAibSecondCatVideo } from "./aib"
+import { getAibCards, getAibFirstCatImage, getAibFirstImage, getAibHeroVideo, getAibSecondCatVideo } from "./aib"
+import FeedbackCards from "./Feedback"
+
+
+
 
 const AibPage = async() => {
     const video = await getAibHeroVideo()
     const image = await getAibFirstImage()
     const catFirstImage = await getAibFirstCatImage()
     const sleepCat = await getAibSecondCatVideo()
+    const aibCards = await getAibCards()
+
+
+
+
+    
 
   return (
     <>
@@ -77,11 +87,56 @@ At Adventures in Breath, we gamify breathing practices to enhance health and wel
 
   {/* section 4  */}
     
-  <section>
-    <p >Our games are built on scientifically validated breath techniques, and use the players breathing as the means of interaction within the game. Through our games, digital experiences, and innovative concepts, we gamify therapeutic breath practices, creating engaging and immersive experiences that promote mindfulness and well-being.</p>
-  </section>
+  <section className="bg-white">
+    <p className="text-black pt-20 pb-44 text-center max-w-6xl text-xl mx-auto leading-relaxed">Our games are built on scientifically validated breath techniques, and use the players breathing as the means of interaction within the game. Through our games, digital experiences, and innovative concepts, we gamify therapeutic breath practices, creating engaging and immersive experiences that promote mindfulness and well-being.</p>
 
-        
+
+
+    {/* cards */}
+<div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
+        {aibCards.map((card) => (
+           <div key={card.id} className="rounded-xl shadow-md overflow-hidden bg-white">
+  <div className="relative">
+    <img
+      src={card.url}
+      alt={card.altText || card.title}
+      className="w-full h-64 object-cover rounded-t-xl"
+    />
+    <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white py-2 px-4 text-center">
+      <h3 className="text-lg font-bold tracking-wide">{card.title}</h3>
+    </div>
+  </div>
+
+  <div className="p-4 text-center flex flex-col items-center">
+<p className="text-gray-700 mb-4 line-clamp-3">
+     {card.description}
+    </p>
+    <button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full transition">
+      Learn More
+    </button>
+  </div>
+</div>
+
+
+                ))}
+                </div>
+
+
+  </section>
+<section className="bg-white py-20">
+  <div className="text-center">
+    <h2 className="text-3xl md:text-4xl font-semibold text-black leading-snug">
+      <span className="font-bold">Play With Purpose</span><br />
+      <span className="font-normal">
+        <span className="text-gray-400 ml-44">Breathe</span> <span className="font-bold">With Impact</span>
+      </span>
+    </h2>
+  </div>
+  <p className="text-black text-center max-w-4xl text-xl mt-10 mx-auto leading-relaxed">Discover games where your breath guides the journey. Explore unique worlds, unlock mysteries, and experience the power of mindful interaction</p>
+</section>
+
+<FeedbackCards /> 
+
         </>
       )
 }

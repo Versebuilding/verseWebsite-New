@@ -42,3 +42,27 @@ export const getAibSecondCatVideo = async () => {
     },
   });
 };
+
+
+export const getAibCards = async() => {
+    return await prisma.mediaAsset.findMany({
+        where : {
+            page: 'aib',
+            section : 'cards',
+            type : 'image',
+        },
+
+
+    })
+}
+
+
+export const getAibFeedbackImages = async () => {
+  return await prisma.mediaAsset.findMany({
+    where: {
+      page: 'aib',
+      section: 'feedback',
+      type: 'image',
+    },
+  });
+};

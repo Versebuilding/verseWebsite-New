@@ -24,5 +24,6 @@ model MediaAsset {
   section   String
   altText   String?
   format    String?
+  description String?
   createdAt DateTime @default(now())
 }

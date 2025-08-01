@@ -19,10 +19,10 @@ const Hero = () => {
 
         {/* Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
-          <h1 className="font-extrabold text-3xl md:text-5xl mb-4 w-full">
+          <h1 className="font-extrabold text-5xl md:text-6xl mb-4 w-full">
             What If Games Could Make You Feel Better ?
           </h1>
-          <p className="text-lg md:text-2xl text-white/80 max-w-2xl mt-2">
+          <p className="text-lg md:text-2xl text-white/80 max-w-3xl mt-2">
             At The Verse, we build immersive digital experiences that support healing, connection, and personal growth.
           </p>
           <div className="flex gap-8 mt-12">

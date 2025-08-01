@@ -32,10 +32,10 @@ const AibPage = async() => {
     </section>
 
 <section className="bg-white text-black py-16 px-6 md:px-20">
-  <h1 className="text-4xl font-bold text-center mb-6">
+  <h1 className="text-4xl font-bold text-center mb-6 font-orbitron">
     Turn Every Breath Into a Journey
   </h1>
-  <p className="text-center max-w-6xl text-xl mx-auto leading-relaxed" >
+  <p className="text-center max-w-6xl text-xl mx-auto leading-relaxed font-unbounded" >
 At Adventures in Breath, we gamify breathing practices to enhance health and wellbeing. Our mission is to make mindfulness fun and accessible for everyone. By combining engaging gameplay with scientifically-backed techniques, we help users improve their mental and physical health, reduce stress, and boost overall wellness. Venture on an adventure through the rich world of AiB, showcasing a diverse array of games, concepts, and imaginative ideas where breath serves as the core mechanic, whether its navigating mystical landscapes or outmaneuvering adversaries.  </p>
 
 
@@ -70,7 +70,7 @@ At Adventures in Breath, we gamify breathing practices to enhance health and wel
 {/* section 3 */}
 
     <section className="bg-white flex items-center gap-2 justify-center ">
-        <h1 className="text-black text-4xl font-extrabold">Ready, Set, Breathe</h1>
+        <h1 className="text-black text-4xl font-extrabold font-Questrial">Ready, Set, Breathe</h1>
         {sleepCat?.url && (
     <video
       autoPlay

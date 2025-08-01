@@ -19,6 +19,8 @@ const AboutUs = () => {
     { img: '/images/aboutUs/community3.jpg', text: '50+ working on average 25 hours a week' },
     { img: '/images/aboutUs/community4.jpg', text: 'You know who you are! Multi-talented, creative, and inspired to change the world' },
     { img: '/images/aboutUs/community5.jpg', text: 'Versers feel empowered, enriched, connected, and productive' },
+    { img: '/images/aboutUs/community6.png', text: 'The Verse spans 20+ countries, uniting creators worldwide' },
+
   ]
 
   const fadeInUp: Variants = {
@@ -107,6 +109,7 @@ const AboutUs = () => {
           <motion.p variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2} className="text-xl md:text-2xl text-gray-400 italic">
             The Verse is not a product. It’s a path. A ritual. A calling.
           </motion.p>
+
 
 
 

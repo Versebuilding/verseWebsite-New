@@ -30,7 +30,8 @@ const Contribution = () => {
         {/* Right Image Section */}
         <div className="flex-1 flex justify-center">
           <Image
-            src="/images/commiunity.png"
+            //  src="/images/commiunity.png"
+            src="/images/impact.png"
             alt="Make an impact photo"
             width={500}
             height={400}

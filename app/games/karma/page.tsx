@@ -95,22 +95,22 @@ export default async function KarmaPage() {
         {images[1] && (
     <img 
     src={images[1].url} 
-    alt={images[1].altText || 'image of'} 
+    alt={images[1].altText || 'image of karma map'} 
     className="rounded-lg" />
 )}
 
-      <p className="text-sm text-purple-300 mt-2 italic">Example: Media Interpretation – Marvel Universe</p>
+      <p className="text-sm text-purple-300 mt-2 italic">Example: Media Interpretation</p>
     </div>
 
     <div className="rounded-xl overflow-hidden border border-purple-500 bg-black/30 backdrop-blur p-2 shadow-lg transition duration-300 hover:shadow-[0_0_40px_rgba(165,100,255,0.6)]">
 {images[2] && (
     <img 
     src={images[2].url} 
-    alt={images[2].altText || 'image of'} 
+    alt={images[2].altText || 'image of karna map2'} 
     className="rounded-lg" />
 )}
 
-      <p className="text-sm text-purple-300 mt-2 italic">Example: Sci-Fi Take – Star Wars Karma Map</p>
+      <p className="text-sm text-purple-300 mt-2 italic">Example: Sci-Fi Take </p>
     </div>
   </div>
 </section>

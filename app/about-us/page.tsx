@@ -67,7 +67,7 @@ const AboutUs = () => {
             {missions.map((item, i) => (
               <motion.div key={i} variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={4 + i} className="text-center">
                 <Image src={item.src} alt={item.label} width={200} height={200} className="rounded-xl object-cover w-full h-[200px]" />
-                <p className="mt-10 text-base">{item.label}</p>
+                <p className="mt-6 text-base">{item.label}</p>
               </motion.div>
             ))}
           </div>

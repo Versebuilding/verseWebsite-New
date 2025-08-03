@@ -1,15 +1,19 @@
 import React from 'react'
 import Image from 'next/image'
 import {motion} from 'framer-motion'
+import { Button } from './ui/button'
+import Link from 'next/link'
 
 const Contribution = () => {
   return (
-    <motion.section
+    <section className="bg-[#202020c9] text-white py-16 px-6">
+
+    <motion.div
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
-      className="bg-[#202020c9] text-white py-16 px-6"
+        className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10"
     >     
      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
       
@@ -21,12 +25,13 @@ const Contribution = () => {
           </p>
 
             <div className="flex justify-start">
-          <button className="mt-8 bg-white text-black font-semibold py-3 px-6 rounded-xl hover:bg-gray-200 transition">
+            <Link href='/about-us'>
+          <Button className="mt-8 bg-black/40 text-whitec cursor-pointer font-semibold py-5 px-6 rounded-xl hover:bg-gray-200 transition hover:text-black ">
             Learn More
-          </button>
+          </Button>
+            </Link>
             </div>
         </div>
-
         {/* Right Image Section */}
         <div className="flex-1 flex justify-center">
           <Image
@@ -40,7 +45,8 @@ const Contribution = () => {
         </div>
 
       </div>
-    </motion.section>
+    </motion.div>
+    </section>
   )
 }
 

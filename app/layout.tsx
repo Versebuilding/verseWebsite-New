@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { useState } from "react";
 import {Orbitron, Questrial,Unbounded } from 'next/font/google'
-
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -42,6 +42,9 @@ export default function RootLayout({
         {children}
         <Footer />
       </body>
+      {process.env.NEXT_PUBLIC_GA_ID && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID}/>
+      )}
     </html>
   );
 }

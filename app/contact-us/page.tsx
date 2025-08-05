@@ -77,7 +77,7 @@ const ContactUs = () => {
               {projectCategories.map((item) => (
                 <DropdownMenuItem
                   key={item}
-                  className="text-white flex justify-center rounded-2xl px-4 py-2 hover:bg-[#2F334D] cursor-pointer"
+                  className="text-white flex justify-start rounded-2xl px-4 py-2 hover:bg-[#2F334D] cursor-pointer"
                 >
                   {item}
                 </DropdownMenuItem>
@@ -96,7 +96,7 @@ const ContactUs = () => {
               {technologyPlatform.map((item) => (
                 <DropdownMenuItem
                   key={item}
-                  className="text-white flex justify-center rounded-2xl px-4 py-2 hover:bg-[#2F334D] cursor-pointer"
+                  className="text-white flex justify-start rounded-2xl px-4 py-2 hover:bg-[#2F334D] cursor-pointer"
                 >
                   {item}
                 </DropdownMenuItem>

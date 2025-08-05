@@ -95,7 +95,7 @@ At Adventures in Breath, we gamify breathing practices to enhance health and wel
     {/* cards */}
 <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
         {aibCards.map((card) => (
-           <div key={card.id} className="rounded-xl shadow-md overflow-hidden bg-white">
+           <div key={card.id} className="rounded-xl shadow-md overflow-hidden bg-white hover:shadow-xl transition duration-300">
   <div className="relative">
     <img
       src={card.url}

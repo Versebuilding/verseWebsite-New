@@ -5,7 +5,7 @@ const realms = [
   { name: 'God realm', desc: 'a world of ecstasy, beauty, and pleasure.' },
   { name: 'Demi-God realm', desc: 'a world of violence, envy, and jealousy.' },
   { name: 'Human realm', desc: 'a world of purpose, aspirations, and possibilities.' },
-  { name: 'Animal realm', desc: 'a world of instincts, survival, and self-preservation.' },
+  { name: 'Animal realm', desc: 'a world of instincts, survival, and self preservation.' },
   { name: 'Ghost realm', desc: 'a world of neediness, addictions, and compulsions.' },
   { name: 'Hell realm', desc: 'a world of agony, terror, and depression.' },
 ]
@@ -31,14 +31,13 @@ export default async function KarmaPage() {
     <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white drop-shadow-[0_0_10px_rgba(165,100,255,0.8)]">
           Discover Your Path Through the Six Realms
         </h1>
-        <p className="max-w-2xl mx-auto text-lg text-gray-300">
-          A cosmic gamified journey into mind, meaning, and karma. Which realm will you awaken in?
-        </p>
+        <p className="max-w-5xl mx-auto mb-20 text-lg text-gray-300">
+Karma is a game that turns kindness and self awareness into play. The Six Realms come from Buddhist teachings not real places, but ways our minds feel and behave. Everyone experiences them differently. You’ll start with short games that explore your prosocial traits, and based on your choices, you’ll land in the realm that fits you best.        </p>
     <div className="flex justify-start mt-10 ml-82 pl-10 ">
 {images[0] && (
   <img
-    src={images[0].url}
-    alt={images[0].altText || 'Image of the Realms'}
+    src={images[1].url}
+    alt={images[1].altText || 'Image of the Realms'}
     width={400}
     height={400}
     className="rounded-xl shadow-[0_0_60px_rgba(165,100,255,0.3)] transition duration-300 hover:shadow-[0_0_40px_rgba(165,100,255,0.6)]"
@@ -94,8 +93,8 @@ export default async function KarmaPage() {
     <div className="rounded-xl overflow-hidden border border-purple-500 bg-black/30 backdrop-blur p-2 shadow-lg transition duration-300 hover:shadow-[0_0_40px_rgba(165,100,255,0.6)]">
         {images[1] && (
     <img 
-    src={images[1].url} 
-    alt={images[1].altText || 'image of karma map'} 
+    src={images[2].url} 
+    alt={images[2].altText || 'image of karma map'} 
     className="rounded-lg" />
 )}
 
@@ -105,8 +104,8 @@ export default async function KarmaPage() {
     <div className="rounded-xl overflow-hidden border border-purple-500 bg-black/30 backdrop-blur p-2 shadow-lg transition duration-300 hover:shadow-[0_0_40px_rgba(165,100,255,0.6)]">
 {images[2] && (
     <img 
-    src={images[2].url} 
-    alt={images[2].altText || 'image of karna map2'} 
+    src={images[0].url} 
+    alt={images[0].altText || 'image of karna map2'} 
     className="rounded-lg" />
 )}
 

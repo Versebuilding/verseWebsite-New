@@ -1,10 +1,9 @@
-'use client'
 // import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import { useState } from "react";
+// import { useState } from "react";
 import {Orbitron, Questrial,Unbounded } from 'next/font/google'
 import { GoogleAnalytics } from '@next/third-parties/google'
 
@@ -40,13 +39,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [navOpen, setNavOpen] = useState(false)
+  // const [navOpen, setNavOpen] = useState(false)
   return (
 <html lang="en" className={`${orbitron.variable} ${questrial.variable} ${unbounded.variable}`}>
       <body
  className="font-questrial antialiased">
       
-        <Navbar navOpen={navOpen} setNavOpen={setNavOpen}/>
+        <Navbar />
         {children}
         <Footer />
       </body>

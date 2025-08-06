@@ -8,9 +8,7 @@ export default function Home() {
  return(
     <>
   <Navbar />
-  <div className='blur-sm pointer-events-none select-none transition-all duration-300'>
   <Hero />
-  </div>
   <Cards />
   <Contribution />
 

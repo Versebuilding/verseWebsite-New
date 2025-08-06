@@ -11,14 +11,6 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Blurred bg when nav opens*/}
-      {navOpen && (
-       <div
-  className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity duration-300"
-  onClick={toggleNav}
-/>
-
-      )}
 
       <nav className="absolute top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-3 bg-black/30">
         {/* Logo */}
@@ -52,20 +44,28 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile menu */}
-      {navOpen && (
-        <div className="absolute top-16 left-0 w-full text-white flex flex-col items-center gap-6 py-8 bg-black/70 z-50">
-          <Link href="/games" onClick={toggleNav}>Games & Digital Experiences</Link>
-          <Link href="/our-team" onClick={toggleNav}>Our Team</Link>
-          <Link href="/about-us" onClick={toggleNav}>About Us</Link>
-          <Link href="/contact-us" onClick={toggleNav}>Contact Us</Link>
-          <button
-            className="bg-gradient-to-r from-[#7F5AF0] to-[#9F7AEA] rounded-xl w-24 h-8 mt-4"
-            onClick={toggleNav}
-          >
-            Explore
-          </button>
-        </div>
-      )}
+     {navOpen ? (
+  <>
+    <div
+      key="backdrop"
+      className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity duration-300"
+      onClick={toggleNav}
+    />
+    <div className="absolute top-16 left-0 w-full text-white flex flex-col items-center gap-6 py-8 bg-black/70 z-50">
+      <Link href="/games" onClick={toggleNav}>Games & Digital Experiences</Link>
+      <Link href="/our-team" onClick={toggleNav}>Our Team</Link>
+      <Link href="/about-us" onClick={toggleNav}>About Us</Link>
+      <Link href="/contact-us" onClick={toggleNav}>Contact Us</Link>
+      <button
+        className="bg-gradient-to-r from-[#7F5AF0] to-[#9F7AEA] rounded-xl w-24 h-8 mt-4"
+        onClick={toggleNav}
+      >
+        Explore
+      </button>
+    </div>
+  </>
+) : null}
+
     </>
   )
 }

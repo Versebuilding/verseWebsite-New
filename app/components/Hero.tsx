@@ -1,5 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
+import { Button } from './ui/button'
+import Link from 'next/link'
 
 const Hero = () => {
   return (
@@ -26,8 +28,16 @@ const Hero = () => {
             At The Verse, we build immersive digital experiences that support healing, connection, and personal growth.
           </p>
           <div className="flex gap-8 mt-12">
-            <button className="bg-gray-700 text-white px-6 py-2 rounded-2xl w-32">Explore</button>
-            <button className="bg-pink-300 text-black px-6 py-2 rounded-2xl w-32">Demo</button>
+            <Button className="bg-gray-700 text-white p-5 rounded-2xl w-32 hover:scale-100 transition duration-75">
+              <Link href='/games'>
+              Explore
+              </Link>
+              </Button>
+            <Button className="bg-pink-300 text-black px-6 py-2 rounded-2xl w-32">
+              <Link href='/comingSoon'>
+              Demo
+              </Link>
+              </Button>
           </div>
         </div>
       </main>

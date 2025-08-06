@@ -38,15 +38,18 @@ const Footer = () => {
             </div>
 
             {/* Form */}
+            <form action="" id='newsletter'>
+
             <div className="flex items-center mt-10 gap-20">
               <input
                 type="email"
                 placeholder="You@example.com"
                 className="border-b border-gray-400 text-white w-80 text-sm bg-transparent
-                           placeholder-gray-400 focus:outline-none focus:ring-0 pb-1"
-              />
+                placeholder-gray-400 focus:outline-none focus:ring-0 pb-1"
+                />
              <Button className='bg-white text-black font-semibold'>Subscribe</Button>
             </div>
+                </form>
           </div>
         </div>
 

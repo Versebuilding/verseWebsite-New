@@ -3,6 +3,10 @@ import Image from 'next/image'
 import PolyWalk from './polywalk'
 import { BookOpen, Paintbrush, Handshake, HeartHandshake } from 'lucide-react';
 
+export const metadata = {
+  title: 'WalkXR | The Verse',
+  description: 'WalkXR reimagines VR locomotion by blending physical walking with immersive storytelling letting your body guide your journey through virtual worlds.',
+}
 
 
 

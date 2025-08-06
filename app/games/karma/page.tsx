@@ -1,6 +1,12 @@
 import Image from 'next/image'
 import { getKarmaImages } from './karma'
 
+export const metadata = {
+  title: 'Karma: The Six Realms | The verse',
+  description: 'Begin your journey through the six psychological realms inspired by Buddhist teachings. Where will you land?',
+
+}
+
 const realms = [
   { name: 'God realm', desc: 'a world of ecstasy, beauty, and pleasure.' },
   { name: 'Demi-God realm', desc: 'a world of violence, envy, and jealousy.' },

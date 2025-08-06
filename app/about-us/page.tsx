@@ -3,6 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import { motion, Variants } from 'framer-motion'
 
+
 const AboutUs = () => {
  
   const missions = [

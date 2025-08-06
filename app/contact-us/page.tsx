@@ -5,6 +5,11 @@ import { DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem, } from '../components/ui/dropdown-menu';
 
+  export const metadata = {
+    title : 'Contact us | The verse',
+    description: 'Get in touch with the team at The Verse. We’d love to hear from you.',
+
+  }
 
 
   const projectCategories = [

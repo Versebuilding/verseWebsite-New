@@ -1,7 +1,10 @@
 import { getAibCards, getAibFirstCatImage, getAibFirstImage, getAibHeroVideo, getAibSecondCatVideo } from "./aib"
 import FeedbackCards from "./Feedback"
 
-
+export const metadata = {
+ title: 'Adventures in Breath | The Verse',
+  description: 'Adventures in Breath (AiB) is a series of breath based games that turn therapeutic breathing practices into immersive, playful experiences making mindfulness fun and accessible for all.',
+}
 
 
 const AibPage = async() => {

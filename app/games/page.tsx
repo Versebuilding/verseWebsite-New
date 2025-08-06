@@ -3,6 +3,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '../components/ui/button';
 
+export const metadata = {
+  title: 'Games & digital experiences | The verse',
+  description: 'Explore our collection of interactive games that blend story, psychology, and play.',
+
+}
+
 const experiences = [
   {
     title: 'WalkXR',

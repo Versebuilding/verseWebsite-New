@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { People } from './teamPeople'
 
+
 const OurTeam = () => {
 
   const coFounders = People.slice(0, 2)

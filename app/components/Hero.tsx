@@ -4,6 +4,8 @@ import { Button } from './ui/button'
 import Link from 'next/link'
 
 const Hero = () => {
+ 
+  
   return (
     <>
 <main className="w-full h-[100dvh] min-h-0 relative overflow-hidden">
@@ -42,14 +44,7 @@ const Hero = () => {
         </div>
       </main>
 
-      <article className="flex justify-center items-center bg-gradient-to-b from-[#170237] to-[#030004] py-16">
-        <Image
-          src="/images/vid.png"
-          alt="vid"
-          width={600}
-          height={600}
-        />
-      </article>
+ 
     </>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import {motion} from 'framer-motion'
+// import {motion} from 'framer-motion'
 import { Button } from './ui/button'
 import Link from 'next/link'
 
@@ -8,11 +8,8 @@ const Contribution = () => {
   return (
     <section className="bg-[#202020c9] text-white py-16 px-6">
 
-    <motion.div
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
+    <div
+  
         className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10"
     >     
      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
@@ -45,7 +42,7 @@ const Contribution = () => {
         </div>
 
       </div>
-    </motion.div>
+    </div>
     </section>
   )
 }

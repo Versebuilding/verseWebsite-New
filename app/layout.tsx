@@ -6,6 +6,8 @@ import Navbar from "./components/Navbar";
 // import { useState } from "react";
 import {Orbitron, Questrial,Unbounded } from 'next/font/google'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -41,6 +43,8 @@ export default function RootLayout({
 }>) {
   // const [navOpen, setNavOpen] = useState(false)
   return (
+    <>
+    <ToastContainer position="top-center"/>
 <html lang="en" className={`${orbitron.variable} ${questrial.variable} ${unbounded.variable}`}>
       <body
  className="font-questrial antialiased">
@@ -53,5 +57,6 @@ export default function RootLayout({
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID}/>
       )}
     </html>
+      </>
   );
 }

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { X } from 'lucide-react';
 import { Button } from './ui/button';
+import { toast } from 'react-toastify';
 
 const Footer = () => {
   return (
@@ -38,11 +39,32 @@ const Footer = () => {
             </div>
 
             {/* Form */}
-            <form action="" id='newsletter'>
+            <form action="" id='newsletter' 
+            onSubmit={async(e) => {
+              e.preventDefault();
+              const target = e.target as HTMLFormElement
+              const email = target.email.value
+              const res = await fetch('/api/newsletter', {
+                method: 'POST',
+                headers: {
+                 'Content-Type' : 'application/json',
+                },
+                body : JSON.stringify({email})
+              })
+              if(res.ok){
+                toast.success('You’re in!')
+                target.reset()
+              }else {
+                const data = await res.json();
+                toast.error(data.error?.[0]?.message || 'Something went wrong, Try again')
+              }
+            }}
+            >
 
             <div className="flex items-center mt-10 gap-20">
               <input
                 type="email"
+                name="email"
                 placeholder="You@example.com"
                 className="border-b border-gray-400 text-white w-80 text-sm bg-transparent
                 placeholder-gray-400 focus:outline-none focus:ring-0 pb-1"

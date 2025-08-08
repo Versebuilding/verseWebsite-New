@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
 interface Props {
@@ -7,30 +7,37 @@ interface Props {
 }
 
 const VideoZoom = ({ url }: Props) => {
-  const { scrollYProgress } = useScroll()
+//   const { scrollYProgress } = useScroll()
 
   // video starts small and grows big
-  const scale = useTransform(scrollYProgress, [0, 0.3], [0.5, 1.3])
-  const opacity = useTransform(scrollYProgress, [0.25, 0.4], [1, 0])
+//   const scale = useTransform(scrollYProgress, [0, 0.3], [0.5, 1.3])
+const ref = useRef<HTMLDivElement | null>(null)
+const {scrollYProgress} = useScroll({
+    target:ref,
+    offset: ['start 80%', 'end 10%']
+})
 
+  const scale = useTransform(scrollYProgress, [0, 0.4], [0.5, 1.3])
+  const opacity = useTransform(scrollYProgress, [0.25, 0.4], [1, 0])
   const [isDone, setIsDone] = useState(false)
 
-  useEffect(() => {
-    const unsubscribe = scrollYProgress.onChange((v) => {
-      setIsDone(v > 2)
+useEffect(() => {
+    const unsub = scrollYProgress.on('change', (v) => {
+      setIsDone(v >= 0.95) 
     })
-
-    return () => unsubscribe()
+    return () => unsub()
   }, [scrollYProgress])
 
+
   return (
-    <div className="relative h-[150vh] w-full bg-black z-10 overflow-hidden">
+    <div ref={ref} 
+    className="relative h-[150vh] w-full bg-black z-10 overflow-hidden">
       <motion.video
         autoPlay
         loop
         muted
         playsInline
-        preload="none"
+        preload="metadata"
         className="absolute top-1/2 left-1/2 w-auto h-auto max-w-[90vw] max-h-[90vh] object-cover -translate-x-1/2 -translate-y-1/2"
         style={{ scale, opacity }}
       >

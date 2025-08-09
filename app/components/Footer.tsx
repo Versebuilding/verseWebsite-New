@@ -14,9 +14,9 @@ const Footer = () => {
         className="
           absolute inset-0  flex items-center justify-center
           font-unbounded font-bold uppercase pointer-events-none select-none
-          text-[22rem] md:text-[28rem] lg:text-[30rem]
+          text-[22rem] md:text-[20rem] lg:text-[24rem]
           leading-none tracking-widest
-          opacity-1.5 z-10"
+          opacity-2.5 z-10"
       >
         Verse
       </h1>

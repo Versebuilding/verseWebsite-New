@@ -19,8 +19,9 @@ const realms = [
 
 
 export default async function KarmaPage() {
-
     const images = await getKarmaImages()
+
+    
   return (
     <>
     <section className="relative bg-black min-h-screen overflow-hidden twinkling-stars">
@@ -41,9 +42,9 @@ export default async function KarmaPage() {
 Karma is a game that turns kindness and self awareness into play. The Six Realms come from Buddhist teachings not real places, but ways our minds feel and behave. Everyone experiences them differently. You’ll start with short games that explore your prosocial traits, and based on your choices, you’ll land in the realm that fits you best.        </p>
     <div className="flex justify-start mt-10 ml-82 pl-10 ">
 {images[0] && (
-  <img
-    src={images[1].url}
-    alt={images[1].altText || 'Image of the Realms'}
+  <Image
+    src={images[0].url}
+    alt={images[0].altText || 'Image of the Realms'}
     width={400}
     height={400}
     className="rounded-xl shadow-[0_0_60px_rgba(165,100,255,0.3)] transition duration-300 hover:shadow-[0_0_40px_rgba(165,100,255,0.6)]"
@@ -96,27 +97,39 @@ Karma is a game that turns kindness and self awareness into play. The Six Realms
 
 
   <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div className="rounded-xl overflow-hidden border border-purple-500 bg-black/30 backdrop-blur p-2 shadow-lg transition duration-300 hover:shadow-[0_0_40px_rgba(165,100,255,0.6)]">
-        {images[1] && (
-    <img 
-    src={images[2].url} 
-    alt={images[2].altText || 'image of karma map'} 
-    className="rounded-lg" />
-)}
-
-      <p className="text-sm text-purple-300 mt-2 italic">Example: Media Interpretation</p>
+     <div className="rounded-xl overflow-hidden border border-purple-500 bg-black/30 backdrop-blur p-2 shadow-lg transition duration-300 hover:shadow-[0_0_40px_rgba(165,100,255,0.6)]">
+  {images[2] && (
+    <div className="relative w-full aspect-square bg-black/40 rounded-lg">
+      <Image
+        src={images[1].url}
+        alt={images[2].altText || 'image of karma map'}
+        fill
+        className="object-contain p-4"  
+        sizes="(max-width: 768px) 100vw, 50vw"
+      />
     </div>
+  )}
+  <p className="text-sm text-purple-300 mt-2 italic">Example: Media Interpretation</p>
+</div>
+
 
     <div className="rounded-xl overflow-hidden border border-purple-500 bg-black/30 backdrop-blur p-2 shadow-lg transition duration-300 hover:shadow-[0_0_40px_rgba(165,100,255,0.6)]">
-{images[2] && (
-    <img 
-    src={images[0].url} 
-    alt={images[0].altText || 'image of karna map2'} 
-    className="rounded-lg" />
-)}
+    {images[0] && (
+  <div className="relative w-full aspect-square bg-black/40 rounded-lg">
+    <Image
+      src={images[2].url}
+      alt={images[0].altText || 'image of karma map 2'}
+      fill
+      className="object-contain p-4"
+      sizes="(max-width: 768px) 100vw, 50vw"
+    />
 
-      <p className="text-sm text-purple-300 mt-2 italic">Example: Sci-Fi Take </p>
+  </div>
+)}
+  <p className="text-sm text-purple-300 mt-2 italic">Example: Sci-Fi Take</p>
+
     </div>
+    
   </div>
 </section>
 

@@ -18,6 +18,7 @@ export default async function Home() {
   <Hero />
   <PostHero  url={video?.url ?? ''}/>
   <div className="relative z-20">
+
   <Cards />
   <Contribution />
   </div>

@@ -47,12 +47,15 @@ Karma is a game that turns kindness and self awareness into play. The Six Realms
     alt={images[0].altText || 'Image of the Realms'}
     width={400}
     height={400}
-    className="rounded-xl shadow-[0_0_60px_rgba(165,100,255,0.3)] transition duration-300 hover:shadow-[0_0_40px_rgba(165,100,255,0.6)]"
-  />
+ className="rounded-xl shadow-[0_0_60px_rgba(165,100,255,0.4)]
+             transition duration-500 hover:shadow-[0_0_80px_rgba(165,100,255,0.8)]
+             [mask-image:radial-gradient(circle,rgba(0,0,0,1) 92%,transparent 100%)]
+             [mask-repeat:no-repeat] [mask-position:center] [mask-size:cover]"
+/>  
 )}
 
     
-      <ul className="text-left max-w-2xl mx-44 mt-12 space-y-8 text-lg text-gray-300">
+      <ul className="text-left max-w-2xl mx-44 mt-20 space-y-12 text-lg text-gray-300">
         {realms.map((realm, i) => (
       <li key={i}>
       <span className="text-purple-400 font-semibold">{realm.name}</span> – {realm.desc}
@@ -96,8 +99,8 @@ Karma is a game that turns kindness and self awareness into play. The Six Realms
     </p>
 
 
-  <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-     <div className="rounded-xl overflow-hidden border border-purple-500 bg-black/30 backdrop-blur p-2 shadow-lg transition duration-300 hover:shadow-[0_0_40px_rgba(165,100,255,0.6)]">
+  <div className="mt-18 grid grid-cols-1 md:grid-cols-2 gap-18">
+     <div className="rounded-xl shadow-[0_0_30px_rgba(165,100,255,0.6)] overflow-hidden border border-black bg-black/30 backdrop-blur p-2 transition duration-300 hover:shadow-[0_0_80px_rgba(165,100,255,0.6)]">
   {images[2] && (
     <div className="relative w-full aspect-square bg-black/40 rounded-lg">
       <Image
@@ -113,7 +116,7 @@ Karma is a game that turns kindness and self awareness into play. The Six Realms
 </div>
 
 
-    <div className="rounded-xl overflow-hidden border border-purple-500 bg-black/30 backdrop-blur p-2 shadow-lg transition duration-300 hover:shadow-[0_0_40px_rgba(165,100,255,0.6)]">
+    <div className="rounded-xl shadow-[0_0_30px_rgba(165,100,255,0.6)] overflow-hidden border border-black bg-black/30 backdrop-blur p-2 transition duration-300 hover:shadow-[0_0_80px_rgba(165,100,255,0.6)]">
     {images[0] && (
   <div className="relative w-full aspect-square bg-black/40 rounded-lg">
     <Image

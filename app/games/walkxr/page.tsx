@@ -5,7 +5,7 @@ import { BookOpen, Paintbrush, Handshake, HeartHandshake } from 'lucide-react';
 
 export const metadata = {
   title: 'WalkXR | The Verse',
-  description: 'WalkXR reimagines VR locomotion by blending physical walking with immersive storytelling letting your body guide your journey through virtual worlds.',
+  description:'WalkXR turns real world walking into an embodied, story driven path to wellness inviting people to learn, create, connect, and heal through play.',
 }
 
 
@@ -37,12 +37,31 @@ const page = () => {
     </div>
 <section className="bg-[#0b0b17] text-white px-6 py-24">
   <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
-    <div className="md:w-1/2">
-      <Image src="/images/walkxr/how.gif" alt="How it works" width={600} height={400} className="rounded-xl shadow-2xl" />
+    <div className="md:w-1/2 transition hover:-translate-y-1 hover:shadow-xl/30">
+      <Image src="/images/walkxr/walkxr-walk.png" alt="How it works" width={600} height={400} className="rounded-xl shadow-2xl" />
     </div>
-    <div className="md:w-1/2 space-y-6">
-      <h2 className="text-3xl font-bold">The How of WalkXR</h2>
-      <p className="text-lg text-gray-300">WalkXR uses curated multimedia experiences, mindfulness practices, and rituals...</p>
+    <div className=" space-y-6">
+      <h2 className="text-3xl md:text-4xl font-bold mb-4">Walking the Walk</h2>
+      <p className="text-lg text-gray-300 mb-6">
+        WalkXR turns play into a path for growth—every step invites you to <span className="text-indigo-300 font-medium">learn</span>, <span className="text-indigo-300 font-medium">create</span>, <span className="text-indigo-300 font-medium">connect</span>, and <span className="text-indigo-300 font-medium">heal</span>.
+      </p>
+
+      <ul className="space-y-4">
+        <li className="text-gray-300">
+          <span className="text-white font-semibold">Learn</span>, Immerse in stories and role-plays that spark empathy for real-world challenges.
+        </li>
+        <li className="text-gray-300">
+          <span className="text-white font-semibold">Create</span>, Shape your journey with art, rituals, and personal “walks.”
+        </li>
+        <li className="text-gray-300">
+          <span className="text-white font-semibold">Connect</span>, Share experiences, reflect together, and build community.
+        </li>
+        <li className="text-gray-300">
+          <span className="text-white font-semibold">Heal</span>, Use guided practices to process emotions and build resilience.
+        </li>
+      </ul>
+    
+    
     </div>
   </div>
 

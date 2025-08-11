@@ -3,7 +3,6 @@
 import "./globals.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-// import { useState } from "react";
 import {Orbitron, Questrial,Unbounded } from 'next/font/google'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import 'react-toastify/dist/ReactToastify.css';

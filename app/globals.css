@@ -51,7 +51,7 @@ html {
   max-width: 100%;
   overflow-x: hidden; 
   scrollbar-gutter: stable;
-
+  position: relative;
   }
 
  body {
@@ -66,7 +66,7 @@ html {
   overflow-x: hidden;
   scrollbar-gutter: stable;
   scrollbar-width: none;
-
+  position: relative;
 
 }
 

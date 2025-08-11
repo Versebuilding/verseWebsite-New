@@ -18,8 +18,9 @@ const Navbar = () => {
           <Image 
             src="/images/logo - The verse.png"
             alt="Logo of the Verse"
-            width={40}
+             width={40}
             height={40}
+            className="w-auto h-auto" 
           />
           <Link href="/">The Verse</Link>
         </div>

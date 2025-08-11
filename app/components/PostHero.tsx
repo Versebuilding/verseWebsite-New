@@ -16,14 +16,19 @@ type Props = {
 const PostHero = ({ url }: Props) => {
   if (!url) {
     return (
-      <section className="flex justify-center items-center bg-gradient-to-b from-[#170237] to-[#030004] py-16">
+      <section className=" flex justify-center items-center bg-gradient-to-b from-[#170237] to-[#030004] py-16">
         <p className="text-white text-lg">Video Loading ..</p>
       </section>
     )
   }
 
-//   return <VideoZoom url={url} />
-return <LazyVideoZoom url={url}/>
+return (
+  <div className="relative overflow-hidden">
+    <div className="relative">
+<LazyVideoZoom url={url}/>
+    </div>
+  </div>
+)
 }
 
 export default PostHero

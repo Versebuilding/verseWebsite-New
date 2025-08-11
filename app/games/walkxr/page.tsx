@@ -20,8 +20,9 @@ const page = () => {
           src="/images/walkxr/walkxrBg.png"
           alt="WALK-XR background"
           fill
+          sizes='40'
           priority
-          className="object-cover w-full h-full"
+          className="object-cover"
           />
       </div>
 

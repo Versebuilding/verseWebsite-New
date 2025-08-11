@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 const Contribution = () => {
   return (
-    <section className="bg-[#202020c9] text-white py-16 px-6">
+    <section className="bg-[#0b0b17] text-white py-16 px-6">
 
     <div
   

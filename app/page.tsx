@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import PostHero from "./components/PostHero";
 import { prisma } from "@/lib/prisma";
+import VerseWay from "./components/VerseWay";
 
 
 export default async function Home() {
@@ -18,8 +19,8 @@ export default async function Home() {
   <Hero />
   <PostHero  url={video?.url ?? ''}/>
   <div className="relative z-20">
-
   <Cards />
+  <VerseWay />
   <Contribution />
   </div>
 

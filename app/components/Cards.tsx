@@ -17,7 +17,7 @@ const slides = [
 
 export default function Cards() {
   return (
-        <section className="py-12 bg-gradient-to-b from-[#1C1428] to-[#202020]">
+        <section className="py-12 bg-gradient-to-b bg-[#0b0b17]">
 
         <motion.div
        initial={{ opacity: 0, y: 72 }}
@@ -27,11 +27,11 @@ export default function Cards() {
       
     >
       
-    <section className="py-12 bg-gradient-to-b from-[#1C1428] to-[#202020]">
-      <h2 className="text-3xl font-bold text-center mb-4 text-white">
+    <section className="py-12 bg-gradient-to-b bg=[#0b0b17]">
+    <h2 className="text-4xl text-center font-bold text-white mb-3">
         What We’re Building
       </h2>
-      <h4 className="text-center text-gray-400 mb-8">
+      <h4 className="text-center text-2xl text-gray-400 mb-10 ">
         Interactive projects and imaginative spaces we’re bringing to life
       </h4>
 
@@ -93,6 +93,9 @@ export default function Cards() {
       </div>
     </section>
           </motion.div>
+
+
+
           </section>
   );
 }

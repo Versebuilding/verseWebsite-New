@@ -16,7 +16,7 @@ const VideoZoom = ({ url }: Props) => {
   const scale = useTransform(scrollYProgress, [0, 0.4], [0.5, 1.3])
   const opacity = useTransform(scrollYProgress, [0.25, 0.4], [1, 0])
 
-  
+
   const [isDone, setIsDone] = useState(false)
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const VideoZoom = ({ url }: Props) => {
     <div className="relative"> 
       <section
         ref={targetRef}
-        className="relative h-[150vh] w-full bg-black z-10 overflow-hidden"
+        className="relative h-[120svh] md:h-[160vh] w-full bg-black z-10 overflow-hidden"
       >
         <motion.video
           autoPlay
@@ -42,14 +42,15 @@ const VideoZoom = ({ url }: Props) => {
           <source src={url} type="video/mp4" />
         </motion.video>
 
-        <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+<div className="pointer-events-none absolute left-1/2 top-[50svh] md:top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-full px-4">
           <motion.h1
-            className="text-white text-5xl font-bold"
-            initial={{ opacity: 1 }}
+ className="text-white text-center font-bold leading-tight
+               text-[clamp(22px,7vw,40px)] sm:text-[clamp(26px,5vw,48px)] max-w-[24ch] mx-auto" 
+                          initial={{ opacity: 1 }}
             animate={{ opacity: isDone ? 0 : 1 }}
             transition={{ duration: 0.5 }}
           >
-            Welcome to The Verse
+            Welcome To The VERSE
           </motion.h1>
         </div>
       </section>

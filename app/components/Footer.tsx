@@ -22,7 +22,6 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto flex flex-col gap-12 relative z-20">
 
         <div className="flex flex-col md:flex-row md:justify-between gap-6 md:gap-0 mb-10">
-          {/* Left title */}
           <h3 className="text-white text-2xl font-semibold">Contact Us</h3>
 
           {/* newsletter */}
@@ -111,7 +110,6 @@ const Footer = () => {
           </div>
 
           {/* Support + Socials */}
-          {/* Support + Socials */}
 <div className="col-span-2 md:col-span-1">
   <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6">
     <div>
@@ -121,7 +119,6 @@ const Footer = () => {
       </ul>
     </div>
 
-    {/* Socials: below Donate on mobile, to the right on md+ */}
     <div className="flex gap-4 md:flex-col md:gap-6 mt-4 md:mt-0 md:ml-32">
       <Link href="https://www.instagram.com/buildingverses/" aria-label="Instagram">
         <FaInstagram className="text-white text-2xl cursor-pointer hover:opacity-80" />
@@ -131,7 +128,7 @@ const Footer = () => {
       </Link>
       <Link href="https://www.linkedin.com/company/building-the-verse/" aria-label="LinkedIn">
         <FaLinkedin className="text-white text-2xl cursor-pointer hover:opacity-80" />
-      </Link>
+    </Link>
     </div>
   </div>
 </div>

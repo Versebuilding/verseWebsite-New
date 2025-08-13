@@ -2,19 +2,31 @@ import React from 'react'
 import Image from 'next/image'
 import { Button } from './ui/button'
 import Link from 'next/link'
+import { prisma } from '@/lib/prisma'
 
-const Hero = () => {
+
+
+export async function getHeroImage() {
+  return prisma.mediaAsset.findFirst({
+    where: { page : 'homePage', section: 'hero', type: 'image'},
+    orderBy: { createdAt: 'desc'},
+    select: {url: true, altText: true, title:true}
+  })
+}
+const Hero = async() => {
+
+  const HeroImage = await getHeroImage() 
   return (
     <main className="relative w-full min-h-[100svh] overflow-hidden">
-          {/* bg */}
-      <Image
-        src="/images/vbg.png"
-        alt="Hero of the verse"
+      {HeroImage?.url && (
+        <Image 
+        src={HeroImage.url}
+        alt={HeroImage.altText || 'hero iamge'}
         fill
         priority
         className="object-cover pointer-events-none select-none"
-      />
-
+        />
+      )}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/70 via-black/55 to-black/70 md:from-black/35 md:via-black/25 md:to-black/40" />
 
 

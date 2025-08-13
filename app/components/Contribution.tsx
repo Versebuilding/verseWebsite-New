@@ -2,22 +2,40 @@ import React from 'react'
 import Image from 'next/image'
 import { Button } from './ui/button'
 import Link from 'next/link'
+import { prisma } from '@/lib/prisma'
 
-const Contribution = () => {
+
+
+
+export async function getContributionImage() {
+  return prisma.mediaAsset.findFirst({
+    where: { page : 'homePage', section: 'contribution', type: 'image'},
+    orderBy: { createdAt: 'desc'},
+    select: {url: true, altText: true, title:true}
+  })
+}
+
+
+const Contribution = async() => {
+
+  const contribution = await getContributionImage()
+
   return (
     <section className="bg-[#0b0b17] text-white py-16 px-6">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-15">
 
 
         <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-          <Image
-            src="/images/impact.png"
-            alt="Make an impact photo"
+          {contribution?.url && (
+            <Image 
+            src={contribution.url}
+            alt={contribution.altText || 'Contribution image'}
             width={500}
             height={400}
             className="rounded-3xl object-cover w-full max-w-sm sm:max-w-md md:max-w-lg"
             priority
-          />
+            />
+          )}
         </div>
 
 

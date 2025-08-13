@@ -40,13 +40,27 @@ const AboutUs = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="bg-[#e8def7] min-h-screen flex flex-col md:flex-row items-center px-10 py-40 gap-44">
-        <div className="relative">
-          <Image src="/images/aboutUs/aboutUs.png" alt="about us page image" width={500} height={500} className="rounded-3xl ml-40" />
-          <h1 className="absolute top-1/2 left-1/2 translate-x-44 -translate-y-44 w-full text-7xl font-bold text-purple-900">THE VERSE</h1>
+      <div className="bg-[#e8def7] min-h-screen flex flex-col md:flex-row items-center px-6 md:px-10 py-24 md:py-40 gap-10 md:gap-20">
+        <h1 className="md:hidden text-5xl font-bold text-purple-900 text-center">
+          THE VERSE
+        </h1>
+          <div className="relative">
+          <Image
+           src="/images/aboutUs/aboutUs.png"
+            alt="about us page image"
+             width={500} 
+             height={500} 
+    className="block mx-auto rounded-3xl md:mx-0 md:ml-40" />
+
+            <h1 className="hidden md:block absolute top-1/2 left-1/2 translate-x-44 -translate-y-44 w-full
+                  text-7xl font-bold text-purple-900" aria-hidden>
+                  THE VERSE
+            </h1>
         </div>
+
+
         <div className="max-w-xl">
-          <p className="text-lg text-gray-800 leading-relaxed mt-44 ">
+    <p className="text-lg text-gray-800 leading-relaxed mt-6 md:mt-44">
             At The Verse, we create games, experiences, and rituals that uplift humanity.
             We are a global community of gamers, developers, designers, scientists, artists,
             visionaries, teachers, and students each of us contributing our expertise to invent

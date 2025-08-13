@@ -78,6 +78,33 @@ p {
   font-family: var(--font-questrial), sans-serif;
 }
 
+
+/* Clip the whole viewport chain (works with 3D) */
+.cards-viewport { position: relative; border-radius: 1.5rem; overflow: hidden; isolation: isolate; }
+.cards-viewport > .cards-swiper { border-radius: inherit; overflow: hidden; }
+.cards-viewport > .cards-swiper > .swiper-wrapper { border-radius: inherit; overflow: hidden; }
+
+/* Ensure slides themselves don’t leak outside their own rounded wrapper */
+.cards-viewport .slide-card { border-radius: 1.5rem; overflow: hidden; }
+
+/* Make creative-effect shadows respect the radius */
+.cards-viewport .swiper-slide-shadow,
+.cards-viewport .swiper-slide-shadow-left,
+.cards-viewport .swiper-slide-shadow-right,
+.cards-viewport .swiper-slide-shadow-top,
+.cards-viewport .swiper-slide-shadow-bottom {
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+/* Safari/iOS quirks: help it honor clipping with 3D transforms */
+.cards-viewport,
+.cards-viewport .cards-swiper,
+.cards-viewport .swiper-wrapper {
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+}
+
  /* :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);

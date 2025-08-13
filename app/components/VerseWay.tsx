@@ -33,15 +33,14 @@ const verseWay = () => {
 
 <section className="bg-[#0B0B12] py-20">
   <div className="max-w-7xl mx-auto px-6 text-center">
-    {/* Heading */}
+
+
     <h2 className="text-4xl font-bold text-white mb-3">Why The Verse ?</h2>
     <p className="text-gray-300 max-w-2xl mx-auto mb-12">
       We build playful, healing first digital experiences co-created with our
       community, informed by research, and designed to be safe and accessible
     </p>
-
-    {/* Cards */}
-    <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
         {pills.map((item, idx) => (
         <div
           key={idx}

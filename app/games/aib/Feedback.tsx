@@ -1,8 +1,7 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+import { useEffect, useState, useMemo } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 type FeedbackCard = {
   id: number
@@ -14,7 +13,7 @@ type FeedbackCard = {
 
 const FeedbackCards = () => {
   const [cards, setCards] = useState<FeedbackCard[]>([])
-  const [flippedCardId, setFlippedCardId] = useState<number | null>(null)
+  const [selected, setSelected] = useState<FeedbackCard | null>(null)
 
   useEffect(() => {
     const fetchFeedback = async () => {
@@ -22,85 +21,94 @@ const FeedbackCards = () => {
         fetch('/api/feedback?type=image'),
         fetch('/api/feedback?type=video'),
       ])
-      const [images, videos] = await Promise.all([
-        imageRes.json(),
-        videoRes.json(),
-      ])
+      const [images, videos] = await Promise.all([imageRes.json(), videoRes.json()])
       setCards([...images, ...videos])
     }
     fetchFeedback()
   }, [])
+  const videos = useMemo(() => cards.filter(c => c.type === 'video'), [cards])
 
-  const images = cards.filter(c => c.type === 'image')
-  const videos = cards.filter(c => c.type === 'video')
+
 
   return (
-    <section className="bg-white">
-      <div className="w-full h-[1px] mb-10 bg-gray-400" />
-      <h2 className="text-3xl text-black text-center font-bold mb-12">
+    <section className="bg-white pb-20">
+      <div className="mb-10 h-px w-full" />
+      <h2 className="mb-8 text-center text-3xl font-bold text-black">
         Let us know what you think
       </h2>
 
-      {/* small image strip */}
-      <div className="flex justify-center gap-4 mb-10">
-        {images.map(card => (
-          <div key={card.id} className="relative w-32 aspect-video">
-            <Image
-              src={card.url}
-              alt={card.altText || card.title || ''}
-              fill
-              className="object-contain"
-              sizes="(max-width: 768px) 25vw, 8rem"
-            />
-          </div>
+
+      <div className="mx-auto grid max-w-2xl grid-cols-2 gap-5 sm:gap-6">
+        {videos.map(card => (
+          <button
+            key={card.id}
+            onClick={() => setSelected(card)}
+            className="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-neutral-200 transition hover:shadow-2xl"
+          >
+            <div className="aspect-square w-full bg-white">
+              <video
+                src={card.url}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="h-full w-full object-contain"
+              />
+            </div>
+
+            <div className="px-3 py-2 text-center">
+              <span className="block text-sm font-semibold text-neutral-900">
+                {card.title}
+              </span>
+            </div>
+          </button>
         ))}
       </div>
 
-      {/* flip cards (videos) */}
-      <div className="grid grid-cols-2 gap-6 max-w-2xl mx-auto">
-        {videos.map(card => {
-          const isFlipped = flippedCardId === card.id
-          return (
+      <AnimatePresence>
+        {selected && (
+          <motion.div
+            className="fixed inset-0 z-50 grid place-items-center bg-black/60 backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
             <motion.div
-              key={card.id}
-              className="relative w-full h-[300px] cursor-pointer"
-              onClick={() => setFlippedCardId(isFlipped ? null : card.id)}
-              initial={false}
-              animate={{ rotateY: isFlipped ? 180 : 0 }}
-              transition={{ duration: 0.6 }}
-              style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
+              initial={{ scale: 0.96, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.96, opacity: 0 }}
+              transition={{ type: 'spring', stiffness: 260, damping: 22 }}
+              className="w-[min(92vw,520px)] rounded-3xl bg-white p-6 text-black shadow-2xl"
             >
-              {/* Front */}
-              <motion.div
-                className="absolute inset-0 rounded-lg overflow-hidden"
-                style={{ backfaceVisibility: 'hidden', rotateY: 0, zIndex: isFlipped ? 0 : 1 }}
-              >
-                <video
-                  src={card.url}
-                  muted
-                  autoPlay
-                  loop
-                  playsInline
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-2 left-2 text-white bg-black/60 px-2 py-1 text-sm rounded">
-                  {card.title}
+              <div className="flex items-center gap-4">
+                <div className="h-16 w-16 overflow-hidden rounded-xl ring-1 ring-neutral-200">
+                  <video
+                    src={selected.url}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="h-full w-full object-contain bg-white"
+                  />
                 </div>
-              </motion.div>
+                <div>
+                  <p className="text-xl font-semibold">Thanks for your feedback!</p>
+                  <p className="text-neutral-600">The verse echoes your attention.</p>
+                </div>
+              </div>
 
-              {/* Back */}
-              <motion.div
-                className="absolute inset-0 flex items-center justify-center 
-                           rounded-lg p-4 text-center backdrop-blur-md 
-                           bg-black border border-white/10 text-white overflow-hidden"
-                style={{ backfaceVisibility: 'hidden', rotateY: 180 }}
-              >
-                <p className="text-lg">The verse echoes your attention</p>
-              </motion.div>
+              <div className="mt-6 flex justify-end">
+                <button
+                  onClick={() => setSelected(null)}
+                  className="rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium hover:bg-neutral-50"
+                >
+                  Close
+                </button>
+              </div>
             </motion.div>
-          )
-        })}
-      </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }

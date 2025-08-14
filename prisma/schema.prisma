@@ -27,3 +27,15 @@ model MediaAsset {
   description String?
   createdAt DateTime @default(now())
 }
+
+model ContactMessage {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  subject   String?
+  message   String
+  CreatedAt DateTime @default(now())
+  ip        String?
+  userAgent  String?
+  status     String  @default("new")
+}

@@ -42,9 +42,7 @@ const Contribution = async() => {
        <div className="order-2 md:order-1 w-full md:w-1/2 text-center md:text-left md:mt-20">
           <h1 className="text-3xl sm:text-4xl font-bold mb-4 md:mb-6 md:mt-10">Make an Impact</h1>
           <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl mx-auto md:mx-0 md:mt-20">
-            The Verse is a global community of inspired gamers, developers, designers, scientists, artists,
-            visionaries, teachers, and students who join together to passionately contribute their wide
-            ranging expertise to invent experiences that enhance human flourishing.
+            The Verse is a global community of inspired gamersg.
           </p>
           <div className="mt-6 md:mt-8 flex justify-center md:justify-start">
             <Link href="/about-us">

@@ -77,18 +77,18 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-medium mb-4">The Verse</h4>
             <ul className="space-y-2">
-              <li><Link href="/">About Us</Link></li>
-              <li><Link href="/">Games &amp; Digital</Link></li>
-              <li><Link href="/">Our Team</Link></li>
+              <li><Link href="/about-us">About Us</Link></li>
+              <li><Link href="/games">Games &amp; Digital</Link></li>
+              <li><Link href="/our-team">Our Team</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-medium mb-4">Games</h4>
             <ul className="space-y-2">
-              <li><Link href="/">WalkXR</Link></li>
-              <li><Link href="/">Karma The Six Realms</Link></li>
-              <li><Link href="/">Adventures In Breath</Link></li>
+              <li><Link href="/games/walkxr">WalkXR</Link></li>
+              <li><Link href="/games/karma">Karma The Six Realms</Link></li>
+              <li><Link href="/games/aib">Adventures In Breath</Link></li>
             </ul>
           </div>
 
@@ -97,7 +97,7 @@ const Footer = () => {
             <h4 className="text-white font-medium mb-4">Information</h4>
             <ul className="space-y-2">
               <li><Link href="/">Privacy</Link></li>
-              <li><Link href="/">Terms &amp; Conditions</Link></li>
+              <li><Link href="/Terms">Terms &amp; Conditions</Link></li>
             </ul>
           </div>
 
@@ -105,7 +105,7 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-medium mb-4">Resources</h4>
             <ul className="space-y-2">
-              <li><Link href="/">Contact</Link></li>
+              <li><Link href="/contact-us">Contact</Link></li>
             </ul>
           </div>
 
@@ -115,7 +115,11 @@ const Footer = () => {
     <div>
       <h4 className="text-white font-medium mb-2">Support</h4>
       <ul>
-        <li className="font-semibold text-[#b8a6a6] cursor-pointer">Donate</li>
+        <li className="font-semibold text-[#b8a6a6] cursor-pointer">
+          <Link href='/comingSoon'>
+          Donate
+          </Link>
+          </li>
       </ul>
     </div>
 

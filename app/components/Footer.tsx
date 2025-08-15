@@ -96,8 +96,8 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-medium mb-4">Information</h4>
             <ul className="space-y-2">
-              <li><Link href="/">Privacy</Link></li>
-              <li><Link href="/Terms">Terms &amp; Conditions</Link></li>
+              <li><Link href="/privacy">Privacy</Link></li>
+              <li><Link href="/terms">Terms &amp; Conditions</Link></li>
             </ul>
           </div>
 

@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
   output   = "../lib/generated/prisma"
@@ -14,28 +8,66 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model MediaAsset {
-  id        Int      @id @default(autoincrement())
-  title     String
-  type      String   
-  url       String
-  page      String
-  section   String
-  altText   String?
-  format    String?
+  id          Int      @id @default(autoincrement())
+  title       String
+  type        String
+  url         String
+  page        String
+  section     String
+  altText     String?
+  format      String?
+  createdAt   DateTime @default(now())
   description String?
-  createdAt DateTime @default(now())
 }
+enum Intent {
+  general
+  feedback
+  partnership
+  project
+  other
+}
+
 
 model ContactMessage {
   id        Int      @id @default(autoincrement())
-  name      String
+  name      String?
   email     String
   subject   String?
   message   String
+  intent    Intent?
+  category  String?
+  platform  String?
+  links     String?
   CreatedAt DateTime @default(now())
   ip        String?
-  userAgent  String?
-  status     String  @default("new")
+  userAgent String?
+  status    String   @default("new")
+
+  @@index([CreatedAt])
+  @@index([status])
+
+}
+
+enum SubscriberStatus {
+  pending
+  subscribed
+  unsubscribed
+  bounced
+  complaint
+}
+
+model Subscriber {
+    id           Int               @id @default(autoincrement())
+  email          String            @unique
+  name           String?
+  status         SubscriberStatus  @default(pending)
+  token          String? 
+  source         String?         
+  ip             String?
+  userAgent      String?
+  createdAt      DateTime          @default(now())
+  confirmedAt    DateTime?
+  unsubscribedAt DateTime?
+  providerId     String? 
 }

@@ -24,8 +24,11 @@ Deployed on **DreamHost VPS**.
 ## Getting Started 
 
 1. Clone the Repository
-2. Navigate into the Project < cd to the project >
-3. Install Dependencies < npm install >
+        git clone https://github.com/Versebuilding/verseWebsite-New.git
+2. Navigate into the Project
+         cd verseWebsite-New
+3. Install Dependencies 
+        npm instal
 4. Configure Environment Variables < Create a .env.local which contains > 
 DATABASE_URL=postgresql://<user>:<password>@<host>:5432/<database>?sslmode=require&channel_binding=require
 RESEND_API_KEY=your-resend-api-key

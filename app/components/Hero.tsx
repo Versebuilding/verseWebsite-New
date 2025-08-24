@@ -46,10 +46,17 @@ const Hero = async() => {
         </p>
 
         <div className="mt-8 md:mt-12 w-30 flex flex-col md:flex-row gap-3 md:gap-6 items-stretch md:items-center md:justify-center">
-          <Button asChild className="bg-gray-700 text-white rounded-2xl mb-1 px-6 py-5 md:w-40 w-full">
-            <Link href="/games" aria-label="Explore games and experiences">Explore</Link>
+          <Button 
+          asChild 
+ className="relative rounded-2xl px-6 py-5 md:w-40 w-full 
+            bg-[#7963DE] text-white 
+             transition duration-300 hover:animate-glow">      
+              <Link href="/games" aria-label="Explore games and experiences">Explore
+               </Link>
           </Button>
-          <Button asChild className="bg-pink-300 text-black rounded-2xl px-6 py-5 md:w-40 w-full">
+          <Button 
+          asChild 
+          className="bg-white text-black rounded-2xl px-6 py-5 md:w-40 w-full transition duration-300 hover:animate-glow">
             <Link href="/comingSoon" aria-label="Try the demo">Demo</Link>
           </Button>
         </div>

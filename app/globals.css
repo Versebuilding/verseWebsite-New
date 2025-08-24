@@ -105,6 +105,14 @@ p {
   will-change: transform;
 }
 
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(127,90,240,0.4); }
+  50% { box-shadow: 0 0 25px rgba(127,90,240,0.8); }
+}
+
+.hover\:animate-glow:hover {
+  animation: glow 1.2s ease-in-out infinite;
+}
  /* :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);

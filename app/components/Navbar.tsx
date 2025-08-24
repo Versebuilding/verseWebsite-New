@@ -26,11 +26,19 @@ const Navbar = () => {
         </div>
 
         {/* Desktop links */}
-        <div className="hidden md:flex gap-20 items-center">
-          <Link href="/games">Games & Digital Experiences</Link>
-          <Link href="/our-team">Our Team</Link>
-          <Link href="/about-us">About Us</Link>
-          <Link href="/contact-us">Contact Us</Link>
+        <div className="hidden md:flex gap-20 items-center ">
+          <Link href="/games" className='relative px-2 py-1 group text-white hover:drop-shadow-[0_0_8px_rgba(127,90,240,0.7)] transition duration-300'>Games & Digital Experiences
+              <span className="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-gradient-to-r from-white via-[#7F5AF0] to-gray-700 transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+          <Link href="/our-team" className='relative px-2 py-1 group text-white hover:drop-shadow-[0_0_8px_rgba(127,90,240,0.7)] transition duration-300'>Our Team
+              <span className="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-gradient-to-r from-white via-[#7F5AF0] to-gray-700 transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+          <Link href="/about-us" className='relative px-2 py-1 group text-white hover:drop-shadow-[0_0_8px_rgba(127,90,240,0.7)] transition duration-300'>About Us
+              <span className="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-gradient-to-r from-white via-[#7F5AF0] to-gray-700 transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+          <Link href="/contact-us" className='relative px-2 py-1 group text-white hover:drop-shadow-[0_0_8px_rgba(127,90,240,0.7)] transition duration-300'>Contact Us
+              <span className="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-gradient-to-r from-white via-[#7F5AF0] to-gray-700 transition-all duration-300 group-hover:w-full"></span>
+          </Link>
         </div>
 
         {/* Desktop CTA */}
@@ -52,7 +60,7 @@ const Navbar = () => {
       className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity duration-300"
       onClick={toggleNav}
     />
-    <div className="absolute top-16 left-0 w-full text-white flex flex-col items-center gap-6 py-8 bg-black/70 z-50">
+    <div className="absolute top-16 left-0 w-full text-white flex flex-col items-center gap-6 py-8 bg-black/70 z-50 ">
       <Link href="/games" onClick={toggleNav}>Games & Digital Experiences</Link>
       <Link href="/our-team" onClick={toggleNav}>Our Team</Link>
       <Link href="/about-us" onClick={toggleNav}>About Us</Link>

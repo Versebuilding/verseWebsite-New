@@ -2,25 +2,41 @@ name: Deploy to DreamHost VPS
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.DH_HOST }}
-          username: ${{ secrets.DH_USER }}   
+          username: ${{ secrets.DH_USER }}
           key: ${{ secrets.DH_PRIVATE_KEY }}
           port: 22
           script: |
+            set -e
+
             cd ~/versebuilding.com/theverse
+
+            # Load NVM for this non-login shell
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+            [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+
+            # Use Node 18 (already installed)
+            nvm use 18
+
+            # Debug check
+            node -v
+            npm -v
+            pm2 -v || true
+
             git reset --hard
             git pull origin main
+
             npm ci
             npm run build
+
             pm2 restart verse || pm2 start npm --name "verse" -- start

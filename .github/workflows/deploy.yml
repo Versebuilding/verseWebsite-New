@@ -1,53 +1,65 @@
-with:
-  host: ${{ secrets.DH_HOST }}
-  username: ${{ secrets.DH_USER }}
-  key: ${{ secrets.DH_PRIVATE_KEY }}
-  port: 22
-  script: |
-    set -euo pipefail
+name: Deploy to DreamHost VPS
 
-    echo "== cd to project =="
-    cd ~/versebuilding.com/theverse
+on:
+  push:
+    branches: [ main ]
 
-    echo "== Load NVM =="
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-    [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.DH_HOST }}
+          username: ${{ secrets.DH_USER }}
+          key: ${{ secrets.DH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            set -euo pipefail
 
-    echo "== Use Node 18 =="
-    nvm use 18
+            echo "== cd to project =="
+            cd ~/versebuilding.com/theverse
 
-    echo "== Versions =="
-    which node && node -v
-    which npm && npm -v || true
-    which pm2 || true
+            echo "== Load NVM =="
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+            [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 
-    echo "== Ensure pm2 is installed for this Node =="
-    if ! command -v pm2 >/dev/null 2>&1; then
-      npm i -g pm2
-    fi
-    pm2 -v
+            echo "== Use Node 18 =="
+            nvm use 18
 
-    echo "== Update code =="
-    git fetch origin
-    git reset --hard origin/main
+            echo "== Versions =="
+            which node && node -v
+            which npm && npm -v || true
+            which pm2 || true
 
-    echo "== Install deps =="
-    npm ci || npm install
+            echo "== Ensure pm2 is installed for this Node =="
+            if ! command -v pm2 >/dev/null 2>&1; then
+              npm i -g pm2
+            fi
+            pm2 -v
 
-    echo "== Build =="
-    npm run build
+            echo "== Update code =="
+            git fetch origin
+            git reset --hard origin/main
 
-    echo "== Restart app with PM2 =="
-    export HOST=0.0.0.0
-    export PORT=8001
+            echo "== Install deps =="
+            npm ci || npm install
 
-    if pm2 describe verse >/dev/null 2>&1; then
-      pm2 restart verse --update-env
-    else
-      pm2 start npm --name "verse" -- start
-    fi
+            echo "== Build =="
+            npm run build
 
-    pm2 save
+            echo "== Restart app with PM2 =="
+            export HOST=0.0.0.0
+            export PORT=8001
 
-    echo "== Done =="
+            if pm2 describe verse >/dev/null 2>&1; then
+              pm2 restart verse --update-env
+            else
+              pm2 start npm --name "verse" -- start
+            fi
+
+            pm2 save
+
+            echo "== Done =="

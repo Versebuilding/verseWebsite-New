@@ -1,42 +1,53 @@
-name: Deploy to DreamHost VPS
+with:
+  host: ${{ secrets.DH_HOST }}
+  username: ${{ secrets.DH_USER }}
+  key: ${{ secrets.DH_PRIVATE_KEY }}
+  port: 22
+  script: |
+    set -euo pipefail
 
-on:
-  push:
-    branches: [ main ]
+    echo "== cd to project =="
+    cd ~/versebuilding.com/theverse
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.DH_HOST }}
-          username: ${{ secrets.DH_USER }}
-          key: ${{ secrets.DH_PRIVATE_KEY }}
-          port: 22
-          script: |
-            set -e
+    echo "== Load NVM =="
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 
-            cd ~/versebuilding.com/theverse
+    echo "== Use Node 18 =="
+    nvm use 18
 
-            # Load NVM for this non-login shell
-            export NVM_DIR="$HOME/.nvm"
-            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-            [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+    echo "== Versions =="
+    which node && node -v
+    which npm && npm -v || true
+    which pm2 || true
 
-            # Use Node 18 (already installed)
-            nvm use 18
+    echo "== Ensure pm2 is installed for this Node =="
+    if ! command -v pm2 >/dev/null 2>&1; then
+      npm i -g pm2
+    fi
+    pm2 -v
 
-            # Debug check
-            node -v
-            npm -v
-            pm2 -v || true
+    echo "== Update code =="
+    git fetch origin
+    git reset --hard origin/main
 
-            git reset --hard
-            git pull origin main
+    echo "== Install deps =="
+    npm ci || npm install
 
-            npm ci
-            npm run build
+    echo "== Build =="
+    npm run build
 
-            pm2 restart verse || pm2 start npm --name "verse" -- start
+    echo "== Restart app with PM2 =="
+    export HOST=0.0.0.0
+    export PORT=8001
+
+    if pm2 describe verse >/dev/null 2>&1; then
+      pm2 restart verse --update-env
+    else
+      pm2 start npm --name "verse" -- start
+    fi
+
+    pm2 save
+
+    echo "== Done =="

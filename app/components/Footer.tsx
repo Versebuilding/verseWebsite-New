@@ -96,7 +96,7 @@ const Footer = () => {
         <div className="border-t border-gray-400 my-8 md:my-0" />
 
         <p className="text-center text-gray-400 text-sm">
-          © The Verse 2024. All rights reserved...
+          © The Verse 2024. All rights reserved
         </p>
       </div>
     </footer>

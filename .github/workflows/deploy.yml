@@ -40,7 +40,21 @@ jobs:
               npm i -g pm2
             fi
             pm2 -v
+            echo "== Checking current Git commit on server =="
+            git rev-parse HEAD
 
+            echo "== Fetching latest from origin =="
+            git fetch origin
+
+            echo "== Remote main commit =="
+            git rev-parse origin/main
+
+            echo "== Resetting to latest commit =="
+            git reset --hard origin/main
+
+
+
+            
             echo "== Update code =="
             git fetch origin
             git reset --hard origin/main

@@ -70,7 +70,7 @@ jobs:
             export PORT=8001
 
             if pm2 describe verse >/dev/null 2>&1; then
-              pm2 restart verse --update-env
+            pm2 reload verse --update-env
             else
               pm2 start npm --name "verse" -- start
             fi

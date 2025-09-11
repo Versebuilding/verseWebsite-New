@@ -57,7 +57,7 @@ const Hero = async() => {
           <Button 
           asChild 
           className="bg-white text-black rounded-2xl px-6 py-5 md:w-40 w-full transition duration-300 hover:animate-glow">
-            <Link href="/comingSoon" aria-label="Try the demo">Demo</Link>
+            <Link href="/comingSoon" aria-label="Try the demo">Play Now</Link>
           </Button>
         </div>
       </div>

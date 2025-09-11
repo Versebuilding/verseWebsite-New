@@ -42,9 +42,11 @@ const Navbar = () => {
         </div>
 
         {/* Desktop CTA */}
+          <Link href='/contact-us'>
         <button className="hidden md:block bg-gradient-to-r from-[#7F5AF0] to-[#9F7AEA] rounded-xl w-24 h-8">
-          Explore
+          Support
         </button>
+          </Link>
 
         {/* Mobile icon */}
 <div className="md:hidden text-3xl cursor-pointer z-[60]" onClick={toggleNav}>
@@ -69,7 +71,7 @@ const Navbar = () => {
         className="bg-gradient-to-r from-[#7F5AF0] to-[#9F7AEA] rounded-xl w-24 h-8 mt-4"
         onClick={toggleNav}
       >
-        Explore
+        Support
       </button>
     </div>
   </>

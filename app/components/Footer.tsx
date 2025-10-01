@@ -70,7 +70,7 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-1">
             <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6">
               <div>
-                <h4 className="text-white font-medium mb-2">Support</h4>
+                <h4 className="text-white font-medium mb-2">Supports</h4>
                 <ul>
                   <li className="font-semibold text-[#b8a6a6] cursor-pointer">
                     <Link href="/comingSoon">Donate</Link>

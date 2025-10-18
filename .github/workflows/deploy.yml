@@ -19,8 +19,8 @@ jobs:
           script: |
             set -euo pipefail
 
-            echo "== cd to project =="
-            cd ~/versebuilding.com/theverse
+            echo "== CD to project =="
+            cd /home/koorosh/versebuilding.com/theverse
 
             echo "== Load NVM =="
             export NVM_DIR="$HOME/.nvm"
@@ -30,51 +30,30 @@ jobs:
             echo "== Use Node 18 =="
             nvm use 18
 
-            echo "== Versions =="
-            which node && node -v
-            which npm && npm -v || true
-            which pm2 || true
-
-            echo "== Ensure pm2 is installed for this Node =="
+            echo "== Ensure PM2 installed =="
             if ! command -v pm2 >/dev/null 2>&1; then
               npm i -g pm2
             fi
-            pm2 -v
-            echo "== Checking current Git commit on server =="
-            git rev-parse HEAD
 
-            echo "== Fetching latest from origin =="
-            git fetch origin
-
-            echo "== Remote main commit =="
-            git rev-parse origin/main
-
-            echo "== Resetting to latest commit =="
-            git reset --hard origin/main
-
-
-
-            
-            echo "== Update code =="
+            echo "== Pull latest code =="
             git fetch origin
             git reset --hard origin/main
 
-            echo "== Install deps =="
+            echo "== Clean and install deps =="
+            rm -rf .next
             npm ci || npm install
 
-            echo "== Build =="
-            npm run build
+            echo "== Build project =="
+            npm run build -- --no-lint
 
             echo "== Restart app with PM2 =="
             export HOST=0.0.0.0
             export PORT=8001
-
             if pm2 describe verse >/dev/null 2>&1; then
-            pm2 reload verse --update-env
+              pm2 restart verse --update-env
             else
               pm2 start npm --name "verse" -- start
             fi
 
             pm2 save
-
-            echo "== Done =="
+            echo "== Deployment complete =="

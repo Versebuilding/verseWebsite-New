@@ -17,7 +17,7 @@ export default async function Home() {
     <>
   <Navbar />
   <Hero />
-  <PostHero  url={video?.url ?? ''}/>
+  <PostHero />
   <div className="relative z-20">
   <Cards />
   <VerseWay />

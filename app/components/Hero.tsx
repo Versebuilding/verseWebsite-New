@@ -20,7 +20,7 @@ const Hero = async() => {
     <main className="relative w-full min-h-[100svh] overflow-hidden">
       {HeroImage?.url && (
         <Image 
-        src={HeroImage.url}
+        src='/images/bg-verse.png'
         alt={HeroImage.altText || 'hero iamge'}
         fill
         priority

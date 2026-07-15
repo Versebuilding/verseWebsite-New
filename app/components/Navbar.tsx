@@ -42,9 +42,9 @@ const Navbar = () => {
         </div>
 
         {/* Desktop CTA */}
-          <Link href='/contact-us'>
+          <Link href='/comingSoon'>
         <button className="hidden md:block bg-gradient-to-r from-[#7F5AF0] to-[#9F7AEA] rounded-xl w-24 h-8">
-          Support
+          Donate
         </button>
           </Link>
 

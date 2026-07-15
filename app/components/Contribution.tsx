@@ -28,7 +28,7 @@ const Contribution = async() => {
         <div className="w-full md:w-1/2 flex justify-center md:justify-end">
           {contribution?.url && (
             <Image 
-            src={contribution.url}
+            src='/images/impact.png'
             alt={contribution.altText || 'Contribution image'}
             width={500}
             height={400}

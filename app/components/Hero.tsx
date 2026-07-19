@@ -36,7 +36,7 @@ const Hero = async() => {
                       min-h-[100svh] pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
         <h1 className="text-balance font-extrabold tracking-tight leading-[1.05]
                        text-[clamp(28px,8vw,64px)] drop-shadow-[0_0_14px_rgba(165,100,255,0.7)]">
-          What If Games Could Make You Feel Better ?
+          What If Games Could Make You Feel Better ??
         </h1>
 
         <p className="mt-3 text-pretty text-white/90 leading-[1.8]

@@ -51,7 +51,7 @@ export default function BreathDetectionPage() {
 
         <div className="mx-auto mt-8 grid max-w-3xl gap-4 text-left">
         <a
-            href="https://mindbodysignalinglab.github.io/Breath-Detection-Library/"
+            href="https://eclectic-crepe-f74bb5.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="group rounded-xl border border-white/10 bg-black/20 p-5 transition duration-300 hover:-translate-y-0.5 hover:border-purple-400/50 hover:bg-purple-500/10"

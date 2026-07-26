@@ -26,7 +26,7 @@ export default function BreathDetectionPage() {
     {/* Embedded Breath Detection website */}
     <div className="overflow-hidden rounded-xl border border-white/10 bg-white shadow-2xl md:rounded-2xl">
         <iframe
-        src="https://eclectic-crepe-f74bb5.netlify.app/"
+        src="https://versebuilding.github.io/Breath-Detection-Library/"
         title="Breath Detection citizen science data collection"
         allow="microphone"
         className="block h-[2700px] w-full border-0 md:h-[1900px]"
@@ -51,7 +51,7 @@ export default function BreathDetectionPage() {
 
         <div className="mx-auto mt-8 grid max-w-3xl gap-4 text-left">
         <a
-            href="https://eclectic-crepe-f74bb5.netlify.app"
+            href="https://versebuilding.github.io/Breath-Detection-Library"
             target="_blank"
             rel="noopener noreferrer"
             className="group rounded-xl border border-white/10 bg-black/20 p-5 transition duration-300 hover:-translate-y-0.5 hover:border-purple-400/50 hover:bg-purple-500/10"

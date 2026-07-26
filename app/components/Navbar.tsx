@@ -27,6 +27,10 @@ const Navbar = () => {
 
         {/* Desktop links */}
         <div className="hidden md:flex gap-20 items-center ">
+          <Link href="/citizen-science" className='relative px-2 py-1 group text-white hover:drop-shadow-[0_0_8px_rgba(127,90,240,0.7)] transition duration-300'> Citizen Science
+              <span className="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-gradient-to-r from-white via-[#7F5AF0] to-gray-700 transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+
           <Link href="/games" className='relative px-2 py-1 group text-white hover:drop-shadow-[0_0_8px_rgba(127,90,240,0.7)] transition duration-300'>Games & Digital Experiences
               <span className="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-gradient-to-r from-white via-[#7F5AF0] to-gray-700 transition-all duration-300 group-hover:w-full"></span>
           </Link>
@@ -63,6 +67,7 @@ const Navbar = () => {
       onClick={toggleNav}
     />
     <div className="absolute top-16 left-0 w-full text-white flex flex-col items-center gap-6 py-8 bg-black/70 z-50 ">
+      <Link href="/citizen-science" onClick={toggleNav}> Citizen Science </Link>
       <Link href="/games" onClick={toggleNav}>Games & Digital Experiences</Link>
       <Link href="/our-team" onClick={toggleNav}>Our Team</Link>
       <Link href="/about-us" onClick={toggleNav}>About Us</Link>

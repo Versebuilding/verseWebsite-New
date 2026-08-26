@@ -8,6 +8,7 @@ import { prisma } from '@/lib/prisma'
 
 
 export async function getContributionImage() {
+  return null
   return prisma.mediaAsset.findFirst({
     where: { page : 'homePage', section: 'contribution', type: 'image'},
     orderBy: { createdAt: 'desc'},

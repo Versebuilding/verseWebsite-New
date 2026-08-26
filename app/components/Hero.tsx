@@ -7,6 +7,7 @@ import { prisma } from '@/lib/prisma'
 
 
 export async function getHeroImage() {
+  return null
   return prisma.mediaAsset.findFirst({
     where: { page : 'homePage', section: 'hero', type: 'image'},
     orderBy: { createdAt: 'desc'},

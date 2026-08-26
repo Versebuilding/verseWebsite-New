@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | The Verse',
+  title: 'Citizen Science | The Verse',
   description:
-    'How The Verse collects, uses, and protects your information when you visit versebuilding.com.',
+    'Help us build an open source project on breath and humming detection at versebuilding.com.',
 }
 const LAST_UPDATED = 'December 17, 2024'
 

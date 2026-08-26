@@ -22,7 +22,7 @@ const INTENTS: { key: Intent; label: string }[] = [
   { key: 'feedback',    label: 'Feedback / bug' },
   { key: 'partnership', label: 'Partnership' },
   { key: 'project',     label: 'Project idea' },
-  { key: 'other',       label: 'Other' },
+  // { key: 'other',       label: 'Other' },
 ]
 
 const projectCategories = [

@@ -48,7 +48,7 @@ const Navbar = () => {
         {/* Desktop CTA */}
           <Link href='/comingSoon'>
         <button className="hidden md:block bg-gradient-to-r from-[#7F5AF0] to-[#9F7AEA] rounded-xl w-24 h-8">
-          Donate
+          Support
         </button>
           </Link>
 

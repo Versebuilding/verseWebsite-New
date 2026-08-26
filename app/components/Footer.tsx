@@ -73,7 +73,7 @@ const Footer = () => {
                 <h4 className="text-white font-medium mb-2">Supports</h4>
                 <ul>
                   <li className="font-semibold text-[#b8a6a6] cursor-pointer">
-                    <Link href="/comingSoon">Donate</Link>
+                    <Link href="/comingSoon">Support</Link>
                   </li>
                 </ul>
               </div>

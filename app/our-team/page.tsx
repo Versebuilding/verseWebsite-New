@@ -7,8 +7,13 @@ import { People } from './teamPeople'
 
 const OurTeam = () => {
 
-  const coFounders = People.slice(0, 2)
-  const others = People.slice(2)
+  const coFounders = People.slice(0, 1)
+  const alumni = People.slice(1,11)
+  const others = People.slice(11,26)
+
+  // const coFounders = [0, 1].map(i => People[i])
+  // const others = [5, 2, 3, 4].map(i => People[i])
+  // const alumni = [6, 7, 8].map(i => People[i])
 
   return (
       <section className="relative bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] text-white py-32 px-4 md:px-20 overflow-hidden">
@@ -45,7 +50,7 @@ const OurTeam = () => {
           </div>
         </div>
 
-        {/* Bottom Grid – Other Members */}
+        {/* Middle Grid – Other Members */}
         <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center">
           {others.map((person, i) => (
             <motion.div
@@ -72,6 +77,40 @@ const OurTeam = () => {
             </motion.div>
           ))}
         </div>
+        
+                <br></br>
+        <h1 className="text-lg font-semibold" > The Verse Alumni </h1>
+        <hr></hr>
+        <br></br>
+
+        {/* Bottom Grid – Alumnis */}
+        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center">
+          {alumni.map((person, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="group bg-[#0f111a] border border-white/10 rounded-3xl p-4 w-full hover:shadow-[0_0_40px_10px_rgba(72,203,255,0.4)] transition-all duration-500"
+            >
+            <div className="relative w-full h-[320px] overflow-hidden rounded-xl">
+              <Image
+                src={person.img}
+                alt={person.name}
+                fill
+                className="object-cover rounded-xl"
+                />
+                <div className="absolute inset-0 z-10 rounded-xl bg-black/30" />
+              </div>
+              <div className="text-center mt-4 text-white">
+                <h3 className="text-lg font-semibold">{person.name}</h3>
+                <p className="text-sm text-purple-300">{person.role}</p>
+                <p className="text-xs italic mt-2 text-gray-400">{person.loc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
       </section>
   )
 }

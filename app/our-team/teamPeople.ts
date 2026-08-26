@@ -106,4 +106,71 @@ export const People = [
     loc: 'California, USA',
     special: false,
   },
+  {
+    name: 'Abhilasha',
+    role: 'Product Manager & Developer',
+    img: '/images/team-members/team-member-16.png',
+    special: false
+  },
+  {
+    name: 'Timo',
+    role: 'Research',
+    img: '/images/team-members/team-member-17.webp',
+    special: false
+  },
+  {
+    name: 'Isi',
+    role: 'Game Developer',
+    img: '/images/team-members/female-default.png',
+    special: false
+  },
+  {
+    name: 'Bella',
+    role: 'Designer & Developer',
+    img: '/images/team-members/team-member-19.png',
+    special: false
+  },
+  {
+    name: 'Priya',
+    role: 'Product Manager',
+    img: '/images/team-members/team-member-20.png',
+    special: false
+  },
+  {
+    name: 'Michael C',
+    role: 'Game Developer',
+    img: '/images/team-members/male-default.png',
+    special: false
+  },
+  {
+    name: 'Miguel',
+    role: 'Game Artist',
+    img: '/images/team-members/team-member-22.png',
+    special: false
+  },
+  {
+    name: 'Dave S',
+    role: 'Game Developer',
+    img: '/images/team-members/team-member-23.png',
+    special: false
+  },
+  {
+    name: 'Aryan',
+    role: 'Developer',
+    img: '/images/team-members/team-member-24.jpg',
+    special: false
+  },
+  {
+    name: 'Clara',
+    role: 'Game Developer',
+    img: '/images/team-members/team-member-25.webp',
+    special: false
+  },
+  {
+    name: 'Shikha',
+    role: 'Product Manager',
+    img: '/images/team-members/female-default.png',
+    special: false
+  },
+
 ]

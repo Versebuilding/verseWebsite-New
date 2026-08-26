@@ -9,15 +9,15 @@ import 'swiper/css/navigation'
 import 'swiper/css/effect-creative'
 
 const slides = [
-  '/images/cards/cards3.png',
-  '/images/cards/cards6.jpg',
-  '/images/cards/cards4.png',
-  '/images/cards/cards2.jpg',
-  '/images/cards/cards5.png',
-  '/images/cards/cards1.jpg',
+  '/images/testimonies/image1.webp',
+  '/images/cards/cards1.png',
+  '/images/testimonies/image2.webp',
+  '/images/testimonies/image3.webp',
+  '/images/cards/cards2.png',
+  '/images/testimonies/image4.webp',
 ]
 
-export default function Cards() {
+export default function Testimony() {
   return (
     <section className="py-12 bg-[#0b0b17]">
       <motion.div
@@ -27,10 +27,10 @@ export default function Cards() {
         viewport={{ once: true, amount: 0.25 }}
       >
         <h2 className="text-3xl md:text-4xl text-center font-bold text-white mb-3">
-          What We’re Building
+        Testimony from our members
         </h2>
         <h4 className="text-center text-lg md:text-2xl text-gray-400 mb-8 md:mb-10">
-          Interactive projects and imaginative spaces we’re bringing to life
+            Journey of past and current members at the Verse
         </h4>
 
         <div className="relative mx-auto w-full max-w-[min(1000px,100vw-2rem)] md:max-w-[min(1100px,100vw-4rem)] px-8 md:px-16">
@@ -64,7 +64,7 @@ export default function Cards() {
               next: { translate: ['35%', 0, -100], scale: 0.92 },
             }}
             grabCursor
-            autoplay={{ delay: 6200, disableOnInteraction: false }}
+            autoplay={{ delay: 2200, disableOnInteraction: false }}
             loop
             centeredSlides
             slidesPerView={1}

@@ -10,12 +10,12 @@ import VerseWay from "./components/VerseWay";
 
 
 export default async function Home() {
-  // const video = await prisma.mediaAsset.findFirst({
-  //   where: {
-  //     title: 'landing page video',
-  //   },
-  // })
-  const video = null
+  const video = await prisma.mediaAsset.findFirst({
+    where: {
+      title: 'landing page video',
+    },
+  })
+  // const video = null
  return(
     <>
   <Navbar />

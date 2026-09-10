@@ -25,7 +25,6 @@ const page = () => {
           className="object-cover"
           />
       </div>
-
        <div className="relative z-10 flex flex-col items-center justify-center px-4 text-white text-center">
           <h1 className="font-bold drop-shadow-[0_0_25px_rgba(165,100,255,0.9)] text-[clamp(28px,8vw,56px)] leading-[1.1]">
             WALK‑XR
@@ -33,6 +32,11 @@ const page = () => {
           <p className="mt-3 text-[clamp(14px,3.8vw,20px)] max-w-[42ch] text-white/90">
           An immersive path to wellness, driven by cutting-edge technology and engaging gameplay.
         </p>
+          <a href="versebuilding.com/smallmomentwalk" 
+            className="text-blue-500 underline hover:text-blue-300 hover:no-underline transition-colors">
+            Learn about Small Moment Walk
+          </a>
+
 
       </div>
     </div>

@@ -11,15 +11,17 @@ const LAST_UPDATED = 'December 17, 2024'
 
 export default function SmallMomentWalk() {
   return (
-    <div className="min-h-screen bg-purple">
-        <div className="pt-16 flex justify-center overflow-hidden">
+    <div className="min-h-screen bg-purple-200">
+        <div className="pt-20 flex justify-center overflow-hidden">
         <img
             src="/images/SMW.webp"
-            className="h-[calc(100dvh-64px)] w-auto"
+            className="h-[calc(100dvh-200px)] w-auto"
             alt=""
         />
         </div>
-        <p className="pt-8 flex justify-center overflow-hidden"> For more information - contact team@versebuilding.com </p>
+        <div className="pt-8 flex justify-center overflow-hidden">
+            <p> For more information - contact team@versebuilding.com </p>
+        </div>
         <br></br>
     </div>
 )

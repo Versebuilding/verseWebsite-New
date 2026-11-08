@@ -3,6 +3,12 @@
 /* @tailwind utilities; */
 @import "tailwindcss/utilities";
 
+/* RythHum keeps its tablet layout on touch screens up to iPad Pro landscape size. */
+@custom-variant rh-desktop {
+  @media (min-width: 86rem), (min-width: 80rem) and (hover: hover) and (pointer: fine) {
+    @slot;
+  }
+}
 
 
 

@@ -1,0 +1,84 @@
+.page {
+  color: var(--smw-ink);
+  background: radial-gradient(ellipse at 72% 15%, var(--smw-glow), transparent 44%), var(--smw-page);
+  padding-bottom: 40px;
+}
+.wrap { max-width: 1440px; }
+.page :focus-visible { outline: 3px solid var(--smw-focus); outline-offset: 5px; }
+.page ::selection { background: var(--smw-accent); color: var(--smw-page); }
+
+/* RythHum pattern: reserve the shared nav's actual height, only on this route. */
+body:has(> .page) > nav { position: relative; }
+/* Avoid the shared 80px link gaps squeezing navigation on portrait iPads. */
+@media (min-width: 768px) and (max-width: 1279px) {
+  body:has(> .page) > nav { padding-inline: 24px; gap: 16px; }
+  body:has(> .page) > nav > div:nth-child(2) { gap: 8px; font-size: 14px; }
+  body:has(> .page) > nav > div:first-child { flex-shrink: 0; }
+  /* The shared footer's desktop social offset otherwise clips on tablets. */
+  body:has(> .page) > footer [class~="md:ml-32"] { margin-left: 0; }
+}
+
+.hero { display: grid; gap: 36px; align-items: center; padding-block: 32px 40px; }
+.intro { min-width: 0; }
+.backLink { display: inline-flex; gap: 8px; align-items: center; color: var(--smw-muted); font-size: 13px; margin-bottom: 32px; }
+.backLink:hover, .textLink:hover, .artwork a:hover { color: var(--smw-ink); }
+.eyebrow { display: flex; align-items: center; gap: 10px; color: var(--smw-accent); font-size: 18px; font-weight: 600; }
+.intro h1 { font-family: var(--font-questrial), sans-serif; font-size: clamp(2.65rem, 7vw, 4rem); font-weight: 700; line-height: 1.07; letter-spacing: -.045em; margin-block: 20px 24px; }
+.intro h1 span { color: var(--smw-accent); background: linear-gradient(100deg, var(--smw-accent), var(--smw-body)); background-clip: text; -webkit-text-fill-color: transparent; }
+.lede { color: var(--smw-body); max-width: 34em; font-size: 18px; line-height: 1.7; }
+.primaryButton, .secondaryButton { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border-radius: 999px; padding: 14px 22px; font-size: 15px; font-weight: 600; min-height: 48px; transition: background .2s, border-color .2s; }
+.primaryButton { color: var(--smw-button-ink); background: var(--smw-button); border: 1px solid var(--smw-button); box-shadow: 0 6px 30px var(--smw-glow); }
+.primaryButton:hover { background: var(--smw-button-hover); border-color: var(--smw-button-hover); }
+.secondaryButton { color: var(--smw-ink); background: var(--smw-surface); border: 1px solid var(--smw-line); }
+.secondaryButton:hover { background: var(--smw-raised); border-color: var(--smw-accent); }
+.contactNote { font-size: 13px; color: var(--smw-muted); margin-top: 14px; }
+.smallMoment { display: flex; align-items: center; gap: 10px; margin-top: 32px; color: var(--smw-accent); font-size: 15px; }
+.smallMoment > span, .sectionLabel > span { width: 6px; height: 6px; flex-shrink: 0; border-radius: 50%; background: var(--smw-accent); box-shadow: 0 0 14px var(--smw-accent); }
+.artwork { position: relative; display: grid; justify-items: center; gap: 16px; scroll-margin-top: 24px; }
+.posterLink { display: block; max-width: 100%; border-radius: 16px; box-shadow: 0 20px 70px var(--smw-shadow), 0 0 60px var(--smw-glow); }
+.poster { width: 320px; max-width: 100%; height: auto; border-radius: 12px; }
+.artwork figcaption { color: var(--smw-muted); font-size: 12px; text-align: center; }
+.artwork figcaption a { display: flex; align-items: center; justify-content: center; gap: 5px; margin-top: 5px; text-decoration: underline; text-underline-offset: 3px; color: var(--smw-accent); }
+.benefits { scroll-margin-top: 24px; padding: 20px; border-radius: 24px; border: 1px solid var(--smw-line); background: color-mix(in srgb, var(--smw-raised) 65%, transparent); }
+.sectionLabel { display: flex; gap: 10px; align-items: center; margin-bottom: 20px; color: var(--smw-accent); text-transform: uppercase; font-size: 12px; line-height: 1.7; letter-spacing: .07em; font-weight: 600; }
+.card { padding: 24px; border-radius: 18px; background: var(--smw-surface); border: 1px solid var(--smw-line); }
+.icon { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; margin-bottom: 22px; border: 1px solid var(--smw-line); border-radius: 50%; color: var(--smw-accent); background: var(--smw-icon-bg); }
+.card h3 { font-size: 17px; font-weight: 700; text-transform: uppercase; letter-spacing: .025em; margin-bottom: 10px; }
+.card p { font-size: 16px; line-height: 1.6; color: var(--smw-body); }
+.science { display: grid; gap: 28px; margin-top: 28px; padding: 32px 24px; border: 1px solid var(--smw-line); border-radius: 24px; background: linear-gradient(110deg, var(--smw-surface), var(--smw-raised)); }
+.quote { display: grid; justify-items: center; align-content: center; gap: 14px; text-align: center; }
+.quote > svg { color: var(--smw-accent); }
+.quote blockquote { font-size: 24px; line-height: 1.5; font-style: italic; text-wrap: balance; }
+.attribution { color: var(--smw-accent); text-transform: uppercase; font-size: 12px; letter-spacing: .12em; }
+.scienceText h2 { display: flex; gap: 10px; align-items: center; font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+.scienceText h2 svg { color: var(--smw-accent); flex-shrink: 0; }
+.scienceText p { font-size: 16px; line-height: 1.7; color: var(--smw-body); }
+.textLink { display: inline-flex; align-items: center; gap: 8px; color: var(--smw-accent); font-size: 14px; margin-top: 16px; text-decoration: underline; text-underline-offset: 4px; }
+.textLink svg { flex-shrink: 0; }
+.palettePreview { margin-top: 28px; color: var(--smw-muted); font-size: 13px; }
+.palettePreview summary { cursor: pointer; padding-block: 12px; width: fit-content; }
+.palettePreview a { border: 1px solid var(--smw-line); border-radius: 999px; padding: 12px 18px; color: var(--smw-body); }
+.palettePreview a[aria-current], .palettePreview a:hover { color: var(--smw-ink); border-color: var(--smw-accent); background: var(--smw-raised); }
+
+@media (min-width: 768px) {
+  .hero { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 28px; padding-block: 40px 48px; }
+  .intro h1 { font-size: clamp(2.7rem, 5.2vw, 4rem); }
+  .poster { width: 300px; }
+  .science { grid-template-columns: 1fr 1fr; align-items: center; gap: 32px; padding: 36px; }
+}
+/* Grow the desktop composition without changing phone or iPad proportions. */
+@media (min-width: 1376px), (min-width: 1280px) and (hover: hover) and (pointer: fine) {
+  .hero { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 64px; padding-block: 44px 56px; }
+  .intro h1 { font-size: clamp(4.3rem, 5.6vw, 5.5rem); }
+  .eyebrow { font-size: 22px; }
+  .lede { font-size: 21px; max-width: 29em; }
+  .poster { width: 340px; }
+  .benefits { padding: 24px; }
+  .card { padding: 28px; }
+  .sectionLabel { font-size: 13px; }
+  .science { padding: 40px; }
+  .quote blockquote { font-size: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page * { transition: none; }
+}

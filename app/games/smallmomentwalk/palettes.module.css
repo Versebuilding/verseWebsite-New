@@ -1,0 +1,69 @@
+/* All Small Moments Walk color roles live here.
+   Change defaultPalette below, or preview without editing:
+   /games/smallmomentwalk?palette=verse-violet
+   Options: verse-violet, moonlit-indigo, velvet-plum, original. */
+@value defaultPalette: verse-violet;
+
+.page {
+  --smw-focus: var(--smw-accent);
+  --smw-glow: color-mix(in srgb, var(--smw-button) 23%, transparent);
+  --smw-icon-bg: color-mix(in srgb, var(--smw-accent) 10%, var(--smw-surface));
+  --smw-shadow: color-mix(in srgb, var(--smw-page) 65%, transparent);
+}
+
+.page[data-palette="verse-violet"] {
+  --smw-page: #0d071b;
+  --smw-surface: #181025;
+  --smw-raised: #241735;
+  --smw-ink: #faf6ff;
+  --smw-body: #dfd5ed;
+  --smw-muted: #b9a9cc;
+  --smw-accent: #c6adff;
+  --smw-line: #574268;
+  --smw-button: #aa87f6;
+  --smw-button-hover: #c3a8ff;
+  --smw-button-ink: #170c2d;
+}
+
+.page[data-palette="moonlit-indigo"] {
+  --smw-page: #0e1025;
+  --smw-surface: #181b34;
+  --smw-raised: #252842;
+  --smw-ink: #f5f4ff;
+  --smw-body: #d8dcf1;
+  --smw-muted: #afb9da;
+  --smw-accent: #b6beff;
+  --smw-line: #4f567b;
+  --smw-button: #a8aff4;
+  --smw-button-hover: #c3c9ff;
+  --smw-button-ink: #11132d;
+}
+
+.page[data-palette="velvet-plum"] {
+  --smw-page: #1b0e21;
+  --smw-surface: #29172f;
+  --smw-raised: #38203f;
+  --smw-ink: #fff3fc;
+  --smw-body: #e8d2e6;
+  --smw-muted: #c9abc6;
+  --smw-accent: #e9b8e4;
+  --smw-line: #735070;
+  --smw-button: #d6a0d4;
+  --smw-button-hover: #ecc0e7;
+  --smw-button-ink: #250d28;
+}
+
+/* The standalone example's original Cosmic Obsidian palette. */
+.page[data-palette="original"] {
+  --smw-page: #13121e;
+  --smw-surface: #121024;
+  --smw-raised: #1b1833;
+  --smw-ink: #f9fafb;
+  --smw-body: #e4e0f2;
+  --smw-muted: #94a3b8;
+  --smw-accent: #d2bbff;
+  --smw-line: #2e2a4a;
+  --smw-button: #7c3aed;
+  --smw-button-hover: #4e1dbe;
+  --smw-button-ink: #ffffff;
+}

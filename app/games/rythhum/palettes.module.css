@@ -1,0 +1,91 @@
+/* To change the default, use verse-violet, moonlit-indigo, velvet-plum, or woodland here. */
+@value defaultPalette: verse-violet;
+
+.page {
+  --rh-brand: var(--rh-accent);
+  --rh-film-label: var(--rh-accent);
+  --rh-forest-label: var(--rh-accent);
+  --rh-storm-label: var(--rh-accent);
+  --rh-storm-ink: var(--rh-ink);
+  --rh-secondary: var(--rh-body);
+  --rh-intro: var(--rh-body);
+  --rh-wind: var(--rh-accent);
+  --rh-music: var(--rh-accent);
+  --rh-forest-line: var(--rh-line);
+  --rh-storm-line: var(--rh-line);
+  --rh-focus: var(--rh-accent);
+  --rh-button-ink: var(--rh-page);
+  --rh-player-bg: var(--rh-forest);
+}
+
+/* Let the shared navigation occupy its real height, including when its links wrap. */
+body:has(> .page) > nav {
+  position: relative;
+}
+
+.page[data-palette="verse-violet"] {
+  --rh-page: #070316;
+  --rh-forest: #1c1428;
+  --rh-storm: #332859;
+  --rh-practice: #181126;
+  --rh-ink: #f6f2ff;
+  --rh-body: #d0c7e1;
+  --rh-accent: #bda9ff;
+  --rh-button: #a78aff;
+  --rh-button-hover: #c4afff;
+  --rh-line: #786594;
+}
+
+.page[data-palette="moonlit-indigo"] {
+  --rh-page: #101429;
+  --rh-forest: #1c2643;
+  --rh-storm: #302f52;
+  --rh-practice: #181d35;
+  --rh-ink: #f0f3ff;
+  --rh-body: #cbd3ed;
+  --rh-accent: #afc4ff;
+  --rh-button: #9eafff;
+  --rh-button-hover: #c1ceff;
+  --rh-line: #687ca0;
+}
+
+.page[data-palette="velvet-plum"] {
+  --rh-page: #211221;
+  --rh-forest: #352036;
+  --rh-storm: #482742;
+  --rh-practice: #2b192c;
+  --rh-ink: #fff1fa;
+  --rh-body: #e6cbdc;
+  --rh-accent: #efb5d5;
+  --rh-button: #e5a0c8;
+  --rh-button-hover: #f2bfdc;
+  --rh-line: #98718b;
+}
+
+.page[data-palette="woodland"] {
+  --rh-page: #fff9ec;
+  --rh-forest: #eaf0dd;
+  --rh-storm: #eee6f3;
+  --rh-practice: #edeadd;
+  --rh-ink: #203c2d;
+  --rh-body: #465646;
+  --rh-accent: #765292;
+  --rh-button: #6736a0;
+  --rh-button-hover: #542985;
+  --rh-line: #af9db7;
+
+  /* Original woodland details. The dark palettes share these roles with their base colors. */
+  --rh-brand: #654185;
+  --rh-film-label: #65507a;
+  --rh-forest-label: #526348;
+  --rh-storm-label: #69517d;
+  --rh-storm-ink: #392d48;
+  --rh-secondary: #475b48;
+  --rh-intro: #405447;
+  --rh-wind: #576c48;
+  --rh-forest-line: #a5af98;
+  --rh-storm-line: #afa0ba;
+  --rh-focus: var(--rh-button);
+  --rh-button-ink: #fff;
+  --rh-player-bg: #20372c;
+}

@@ -32,9 +32,9 @@ const page = () => {
           <p className="mt-3 text-[clamp(14px,3.8vw,20px)] max-w-[42ch] text-white/90">
           An immersive path to wellness, driven by cutting-edge technology and engaging gameplay.
         </p>
-          <a href="../smallmomentwalk" 
+          <a href="/games/smallmomentwalk"
             className="text-blue-500 underline hover:text-blue-300 hover:no-underline transition-colors">
-            Learn about Small Moment Walk
+            Learn about Small Moments Walk
           </a>
 
 

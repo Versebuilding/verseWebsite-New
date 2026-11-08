@@ -11,6 +11,25 @@ export const metadata = {
 
 const experiences = [
   {
+    title: 'My Friend Riley',
+    description: 'My Friend Riley is a cozy wellbeing game for kids. Hum along on a magical rollercoaster, slice through stress, and come home to a living garden where every feeling has a furry friend.',
+    image: '/images/games/myfriendriley.png',
+    slug: 'myfriend-riley'
+  },
+
+  {
+    title: 'RythHum',
+    description: 'A voice-controlled adventure where children explore big feelings, befriend forest creatures, and find the magic in their own breath.',
+    image: '/images/games/rythhum.png',
+    slug: 'rythhum'
+  },
+  {
+    title: 'Small Moments Walk',
+    description: 'Feel seen. Walk together. An AI-powered social experience designed to create meaningful moments of connection through play.',
+    image: '/images/walkxr/walkxrBg.png',
+    slug: 'smallmomentwalk'
+  },
+  {
     title: 'WalkXR',
     description: 'An immersive first-person game blending storytelling, interactive gameplay, and emotional regulation to foster learning, creativity, and healing.',
     image: '/images/games/walkxr.jpeg',
@@ -44,9 +63,10 @@ export default function Games() {
             <Image
               src={exp.image}
               alt={exp.title}
-              width={500}
-              height={300}
-              className="rounded-2xl object-cover"
+              width={exp.slug === 'smallmomentwalk' ? 385 : 500}
+              height={exp.slug === 'smallmomentwalk' ? 768 : 300}
+              sizes={exp.slug === 'smallmomentwalk' ? '151px' : undefined}
+              className={exp.slug === 'smallmomentwalk' ? 'rounded-2xl object-contain h-[300px] w-auto' : 'rounded-2xl object-cover'}
               />
             <h2 className="text-2xl font-bold mt-4 mb-2">{exp.title}</h2>
             <p className="text-base text-gray-300">{exp.description}</p>

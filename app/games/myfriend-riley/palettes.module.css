@@ -1,0 +1,81 @@
+/* All Riley color roles live here. Change this value to choose the default.
+   Preview with ?palette=verse-violet | moonlit-indigo | velvet-plum | original. */
+@value defaultPalette: verse-violet;
+
+.page {
+  color-scheme: dark;
+  --mfr-plum: #24163f;
+  --mfr-ink: #f6f2ff;
+  --mfr-ink-soft: #d0c7e1;
+  --mfr-ground: #10091f;
+  --mfr-surface: #211630;
+  --mfr-line: #67517e;
+  --mfr-lilac: #bda9ff;
+  --mfr-lilac-soft: #33244e;
+  --mfr-lilac-glow: rgb(150 120 255 / 38%);
+  --mfr-pink: #ff9dce;
+  --mfr-leaf: #9ade9a;
+  --mfr-sun: #ffcf69;
+  --mfr-sun-soft: #453521;
+  --mfr-on-accent: #160c28;
+  --mfr-on-sun: #2b1f45;
+  --mfr-water: #8cd1ff;
+  --mfr-black: #000;
+  --mfr-promise-ink: #f4eeff;
+  --mfr-promise-heading: #fff;
+  --mfr-promise-copy: #dcd0f2;
+  --mfr-promise-star: #ffcf69;
+  --mfr-bloom-glow: rgb(255 190 220 / 25%);
+  --mfr-shadow: 0 18px 40px -22px rgb(0 0 0 / 65%);
+}
+
+.page[data-palette="moonlit-indigo"] {
+  --mfr-ground: #121027;
+  --mfr-surface: #22203e;
+  --mfr-plum: #282343;
+  --mfr-line: #68648d;
+  --mfr-ink: #f2f1ff;
+  --mfr-ink-soft: #cbcbe6;
+  --mfr-lilac: #b7bdff;
+  --mfr-lilac-soft: #34325b;
+  --mfr-lilac-glow: rgb(151 156 255 / 38%);
+  --mfr-sun: #f5d58a;
+  --mfr-sun-soft: #3b3240;
+  --mfr-on-accent: #161329;
+}
+
+.page[data-palette="velvet-plum"] {
+  --mfr-ground: #211025;
+  --mfr-surface: #341d39;
+  --mfr-plum: #3d2143;
+  --mfr-line: #88608e;
+  --mfr-ink: #fff1fa;
+  --mfr-ink-soft: #e6cbdc;
+  --mfr-lilac: #e5b4f0;
+  --mfr-lilac-soft: #4c2c54;
+  --mfr-lilac-glow: rgb(214 139 228 / 35%);
+  --mfr-sun: #ffd196;
+  --mfr-sun-soft: #493126;
+  --mfr-on-accent: #27112b;
+}
+
+/* The standalone example's original light palette. */
+.page[data-palette="original"] {
+  color-scheme: light;
+  --mfr-plum: #24163f;
+  --mfr-ink: #2b1f45;
+  --mfr-ink-soft: #5b4e78;
+  --mfr-ground: #f5f1ff;
+  --mfr-surface: #fff;
+  --mfr-line: #e2d9fa;
+  --mfr-lilac: #8a6cf0;
+  --mfr-lilac-soft: #e4dbff;
+  --mfr-lilac-glow: rgb(182 156 255 / 55%);
+  --mfr-pink: #e5559c;
+  --mfr-leaf: #3e9a45;
+  --mfr-sun: #f4b63a;
+  --mfr-sun-soft: #fff1c9;
+  --mfr-on-accent: #fff;
+  --mfr-water: #2e8bc8;
+  --mfr-shadow: 0 18px 40px -22px rgb(52 30 110 / 45%);
+}
